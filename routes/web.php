@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+$locale = request()->segment(1);
 Route::middleware('setLocale')->prefix($locale)->group(function() {
 Route::get('/', [App\Http\Controllers\User\HomeController::class, 'index'])->name('user.home');
 Route::get('/about', [App\Http\Controllers\User\HomeController::class, 'about_us'])->name('user.about');
@@ -24,3 +25,7 @@ Route::get('/blog', [App\Http\Controllers\User\HomeController::class, 'blog'])->
 Route::get('/blog_detail', [App\Http\Controllers\User\HomeController::class, 'blog_detail'])->name('user.blog_detail');
 Route::get('/careers', [App\Http\Controllers\User\HomeController::class, 'careers'])->name('user.careers');
 });
+Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
