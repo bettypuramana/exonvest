@@ -25,6 +25,13 @@
     <link rel="preload stylesheet" href="{{asset('assets/css/plugins/fontawesome.min.css')}}" as="style">
     <link rel="preload stylesheet" href="{{asset('assets/css/style.css')}}" as="style">
     @yield('css')
+    <style>
+        .header-sticky .logoname {
+            color: #262323;
+            padding-top: 10px;
+            margin-bottom: 14px;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,6 +48,14 @@
                             <!---<img class="logo-white" src="assets/images/logo/logo-1.svg" alt="Hostie">
                             <img class="logo-dark" src="assets/images/logo/logo-4.svg" alt="Hostie">-->
 							<h3 class="logoname">exonvest</h3>
+                        <?php
+                        $url= url()->current();
+                        ?>
+                        <ul class="list-inline d-flex  hours align-items-center mb-0" style="color:white;"
+                        >
+                            <li class="list-inline-item mr-5"><a href="@if(empty(app()->getLocale())){{url('en')}}@else{!! str_replace('ar', 'en', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">English</a></li>
+                            <li class="list-inline-item mr-5"><a href="@if(empty(app()->getLocale())){{url('ar')}}@else{!! str_replace('en', 'ar', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">عربي</a></li>
+                        </ul>
                         </a>
                     </div>
                     <!-- FOR NAVIGATION MENU -->
@@ -48,13 +63,13 @@
                     <nav class="rts-header__menu" id="mobile-menu">
                         <div class="hostie-menu">
                             <ul class="list-unstyled hostie-desktop-menu">
-                                <li class="menu-item"><a href="{{route('user.home')}}">Home</a></li>
-                                <li class="menu-item"><a href="{{route('user.about')}}">About Us</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/':app()->getLocale().'/')}}">@lang('messages.home')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'about':app()->getLocale().'/'.'about')}}">@lang('messages.about_us')</a></li>
                                 <li class="menu-item"><a href="#brands">Brands</a></li>
                                 <li class="menu-item"><a href="#Community">Community</a></li>
-                                <li class="menu-item"><a href="{{route('user.careers')}}">Careers</a></li>
-                                <li class="menu-item"><a href="{{route('user.blog')}}">Blog</a></li>
-                                <li class="menu-item"><a href="{{route('user.contact_us')}}">Contact Us</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'careers':app()->getLocale().'/'.'careers')}}">Careers</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'blog':app()->getLocale().'/'.'blog')}}">Blog</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'contact_us':app()->getLocale().'/'.'contact_us')}}">@lang('messages.contact')</a></li>
                                 
                             </ul>
                         </div>
@@ -79,8 +94,8 @@
                         <h5 class="widget-title">Menu</h5>
                         <div class="rts-footer__widget--menu ">
                             <ul>
-                                 <li class="menu-item"><a href="{{route('user.home')}}">Home</a></li>
-                                <li class="menu-item"><a href="{{route('user.about')}}">About Us</a></li>
+                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/':app()->getLocale().'/')}}">Home</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'about':app()->getLocale().'/'.'about')}}">About Us</a></li>
                                 <li class="menu-item"><a href="#brands">Brands</a></li>
                                 <li class="menu-item"><a href="#Community">Community</a></li>
                             </ul>
@@ -94,9 +109,9 @@
                         <h5 class="widget-title">Quick Links</h5>
                         <div class="rts-footer__widget--menu ">
                             <ul>
-                                <li class="menu-item"><a href="{{route('user.careers')}}">Careers</a></li>
-                                <li class="menu-item"><a href="{{route('user.blog')}}">Blog</a></li>
-                                <li class="menu-item"><a href="{{route('user.contact_us')}}">Contact Us</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'careers':app()->getLocale().'/'.'careers')}}">Careers</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'blog':app()->getLocale().'/'.'blog')}}">Blog</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'contact_us':app()->getLocale().'/'.'contact_us')}}">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -155,13 +170,13 @@
         <div class="mobile-menu-main">
             <nav class="nav-main mainmenu-nav mt--30">
                 <ul class="mainmenu metismenu" id="mobile-menu-active">
-                    <li><a  class="main" href="{{route('user.home')}}">Home</a></li>
-					 <li><a  class="main" href="{{route('user.about')}}">About Us</a></li>
+                    <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/':app()->getLocale().'/')}}">Home</a></li>
+					 <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/'.'about':app()->getLocale().'/'.'about')}}">About Us</a></li>
 					 <li><a  class="main" href="#brands">Brands</a></li>
 					 <li><a  class="main" href="#Community">Community</a></li>
-					 <li><a  class="main" href="#careers">Careers</a></li>
-					 <li><a  class="main" href="{{route('user.blog')}}">Blog</a></li>
-					 <li><a  class="main" href="{{route('user.contact_us')}}">Contact Us</a></li>
+					 <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/'.'careers':app()->getLocale().'/'.'careers')}}">Careers</a></li>
+					 <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/'.'blog':app()->getLocale().'/'.'blog')}}">Blog</a></li>
+					 <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/'.'contact_us':app()->getLocale().'/'.'contact_us')}}">Contact Us</a></li>
                 </ul>
             </nav>
 
