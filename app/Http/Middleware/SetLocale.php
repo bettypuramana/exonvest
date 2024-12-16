@@ -15,12 +15,16 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next)
     {
-        $locale = $request->segment(1);
-        
+         $locale='';
+        if($request->segment(1)=='arabic'){
+            $locale='ar';
+        }else if($request->segment(1)=='english'){
+            $locale='en';
+        }
         // if (!in_array($locale, ['en', 'ar'])) {
         //     $locale = 'ar';
         // }
-        
+
         app()->setLocale($locale);
         return $next($request);
     }

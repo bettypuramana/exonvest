@@ -1,4 +1,5 @@
 @extends('layouts.user.user_layout')
+@section('title', 'Exonvest || Home')
 @section('content')
  
  <!-- HERO BANNER ONE -->
@@ -13,12 +14,12 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="rts-hero__content w-550">
-                        <h2 class="heading" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">Empowering Ethical Choices, Building a Better World
+                        <h2 class="heading" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">@lang('messages.slider_head')
                         </h2>
                         <p class="description" data-sal="slide-down" data-sal-delay="400" data-sal-duration="800">
-                            Partnering with responsible brands to create a future of integrity, trust, and impact</p>
+                            @lang('messages.slider_para')</p>
                         <div class="rts-hero__content--group" data-sal="slide-down" data-sal-delay="500" data-sal-duration="800">
-                            <a href="#about" class="primary__btn white__bg">Discover Ethically Sourced Brands</a>
+                            <a href="#about" class="primary__btn white__bg">@lang('messages.slider_btn')</a>
                         </div>
                        
                     </div>
@@ -37,30 +38,30 @@
     <!-- ABOUT US -->
     <div id="about" class="rts-about position-relative section__padding">
         <div class="container">
-		<h2 class="text-center main-head mb-3">About Exonvest </h2>
+		<h2 class="text-center main-head mb-3">@lang('messages.about_head') </h2>
             <div class="mt-3 row justify-content-center align-items-center">
                 
                 <div class="col-xl-7 col-lg-7">
                     <div class="rts-about__content bg-white">
-                        <h3>Together, Shaping a Sustainable Future</h3>
+                        <h3>@lang('messages.about_headding')</h3>
                         <p class="description mb-5" data-sal="slide-down" data-sal-delay="400" data-sal-duration="800">
-                            At Exonvest, we bridge the gap between conscious consumers and ethical brands. Our mission is simple: to make responsible choices accessible and impactful. By connecting with brands that prioritize sustainability and fairness, every decision you make contributes to a brighter, greener tomorrow.
+                           @lang('messages.about_Para') 
                         </p>
 						<div class="checkboxes mb-3">
     <div class="checkbox">
       <div class="checkmark"></div>
-      <p>Connecting businesses with sustainable brands</p>
+      <p>@lang('messages.about_p-1')</p>
     </div>
     <div class="checkbox">
       <div class="checkmark"></div>
-      <p>Prioritizing social impact and environmental responsibility</p>
+      <p>@lang('messages.about_p-2')</p>
     </div>
     <div class="checkbox">
       <div class="checkmark"></div>
-      <p>Empowering businesses to make ethical choices</p>
+      <p>@lang('messages.about_p-3')</p>
     </div>
   </div>
-						<a href="#about" class="primary__btn" target="_blank">Learn More About Us</a>
+						<a href="#about" class="primary__btn" target="_blank">@lang('messages.about_btn') </a>
                     </div>
                 </div>
 				<div class="col-xl-5 col-lg-5">
@@ -79,7 +80,7 @@
 	
 
     <!-- BRAND AREA -->
-    <div id="brands" class="rts-brand rts-brand__bg--section">
+    <div id="brands" class="rts-brand rts-brand__bg--section ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -124,17 +125,17 @@
 	
 	
 	<!-- SEARCH DOMAIN -->
-    <div class=" rts-domain-finder">
+    <div class=" rts-domain-finder section__padding">
         <div class="container">
             <div class="ourteam">
             <div class="row ">
                 <div class="col-lg-1"></div>
 				<div class="col-lg-6">
                     <div class="aboutsec">
-                        <h3 class="mb-3" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">Join Our Team</h3>
-                        <h4>Build a Career with Purpose</h4>
-						<p>Are you passionate about driving positive change? At Exonvest, we believe in the power of people to make a difference. Join our team and become part of a movement that values innovation, collaboration, and ethical progress.</p>
-						<a href="#about" class="primary__btn" target="_blank">Explore Opportunities</a>
+                        <h3 class="mb-3" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">@lang('messages.team_head')</h3>
+                        <h4>@lang('messages.team_Headline')</h4>
+						<p>@lang('messages.team_Subtext')</p>
+						<a href="#about" class="primary__btn" target="_blank">@lang('messages.team_btn')</a>
                     </div>
                 </div>
             </div>
@@ -144,14 +145,14 @@
     <!-- SEARCH DOMAIN END -->
 
 	 <!-- HOSTING LATEST BLOG -->
-    <section class="rts-blog section__rounded section__padding">
+    <section class="rts-blog  section__padding">
         <div class="container">
             <div class="row justify-content-center justify-content-md-start">
                 <div class="col-md-12 col-sm-10">
                     <div class="rts-section section-style-two">
                         <div class="rts-section__two">
                             <h2 class="title mb-0" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">
-                                How We’re Making a Difference</h2>
+                               @lang('messages.impact_head')</h2>
                         </div>
                     </div>
                 </div>
@@ -165,12 +166,12 @@
                         </a>
                         <div class="rts-blog__single--meta">
                             
-                            <a href="##" class="title">	Ethical Partnerships</a>
+                            <a href="##" class="title">	@lang('messages.impact_item_1_head')</a>
                             <div class="rts-blog__single--author">
-                                <p>We collaborate with businesses that value transparency and sustainability to create a network of trust</p>
+                                <p>@lang('messages.impact_item_1_para')</p>
                             </div>
 							<div class=" text-center">
-								<a href="#about" class="primary__btn" target="_blank">See the Impact</a>
+								<a href="#about" class="primary__btn" target="_blank">@lang('messages.impact_btn')</a>
 							</div>
                         </div>
                     </div>
@@ -182,12 +183,12 @@
                         </a>
                         <div class="rts-blog__single--meta">
                             
-                            <a href="##" class="title">	Community Engagement</a>
+                            <a href="##" class="title">	@lang('messages.impact_item_2_head')</a>
                             <div class="rts-blog__single--author">
-                                <p>Together, we inspire a community dedicated to driving meaningful, lasting change.</p>
+                                <p>@lang('messages.impact_item_2_para')</p>
                             </div>
 							<div class=" text-center">
-								<a href="#about" class="primary__btn" target="_blank">See the Impact</a>
+								<a href="#about" class="primary__btn" target="_blank">@lang('messages.impact_btn')</a>
 							</div>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
                         </a>
                         <div class="rts-blog__single--meta">
                             
-                            <a href="##" class="title">Sustainable Choices</a>
+                            <a href="##" class="title">	@lang('messages.impact_item_3_head')</a>
                             <div class="rts-blog__single--author">
-                                <p>Our initiatives empower individuals and businesses to embrace eco-friendly decisions with confidence.</p>
+                                <p>@lang('messages.impact_item_3_para')</p>
                             </div>
 							<div class=" text-center">
-								<a href="#about" class="primary__btn" target="_blank">See the Impact</a>
+								<a href="#about" class="primary__btn" target="_blank">@lang('messages.impact_btn')</a>
 							</div>
                         </div>
                     </div>
@@ -214,17 +215,17 @@
     </section>	
 			
 			<!-- SEARCH DOMAIN -->
-    <div id="Community" class=" rts-domain-finder">
+    <div id="Community" class=" rts-domain-finder section__padding">
         <div class="container">
             <div class="communitybg">
             <div class="row ">
                 <div class="col-lg-1"></div>
 				<div class="col-lg-6">
                     <div class="aboutsec">
-                        <h3 class="mb-3" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">Join the Community </h3>
-                        <h4>Be Part of the Change</h4>
-						<p>Join the #ChooseImpact campaign and stand with brands that share a vision for a sustainable and ethical future. Together, we can make every choice matter.</p>
-						<a href="#about" class="primary__btn" target="_blank">Join the Movement</a>
+                        <h3 class="mb-3" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">@lang('messages.community_head') </h3>
+                        <h4>@lang('messages.community_Headline')</h4>
+						<p>@lang('messages.community_Subtext')</p>
+						<a href="#about" class="primary__btn" target="_blank">@lang('messages.community_btn')</a>
                     </div>
                 </div>
             </div>
@@ -241,10 +242,10 @@
                     <div class="rts-section section-style-two">
                         <div class="rts-section__twos">
                             <h2 class="title mb-0" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">
-                                Our Latest Blog</h2>
+                               @lang('messages.blog_head')</h2>
                         </div>
                         <div class="rts-section-description">
-                           <a href="#about" class="view__btn" target="_blank">View All <i class="fa fa-arrow-right"></i></a>
+                           <a href="#about" class="view__btn" target="_blank">@lang('messages.blog_btn')<i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -253,21 +254,22 @@
 			<div class="newblog rts-brand__wrapper pt-5 pb-5">
 				 <div class="rts-testimonial__slider testimonial__slider--first">
                         <div class="swiper-wrapper">
-                            <!-- single testimonial -->
-                            <div class="swiper-slide">
+                            
+                            
+                       <div class="swiper-slide">
 							<div class="rts-blog__single">
 								<a href="##">
 									<img class="blog__thumb" src="{{asset('assets/images/blog/post-1.jpg')}}" alt="blog post thumb">
 								</a>
 								<div class="rts-blog__single--meta">
 									<div class="cat__date float-start text-left">
-										<a href="#" class="cat">B2B</a>
+										<a href="#" class="cat">@lang('messages.blog_Subtext1')</a>
 									</div>
-									<a href="##" class="title  pb-3">Stay Updated with Our Latest Brands</a>
+									<a href="##" class="title  pb-3">@lang('messages.blog_Headline1')</a>
 									<hr>
 									<div class="row">
 										<div class="col-lg-6 col-6 author text-start">
-											<span><i class="fa fa-user"></i></span> By John
+											<span><i class="fa fa-user"></i></span> By Natasha
 										</div>
 										<div class="col-lg-6 col-6  author__content text-end">
 											 <span><i class="fa fa-calendar"></i></span> <span>August 25, 2024</span>
@@ -283,9 +285,9 @@
 								</a>
 								<div class="rts-blog__single--meta">
 									<div class="cat__date float-start text-left">
-										<a href="#" class="cat">Digital</a>
+										<a href="#" class="cat">@lang('messages.blog_Subtext2')</a>
 									</div>
-									<a href="##" class="title  pb-3">Explore What's New in Our online Website</a>
+									<a href="##" class="title  pb-3">@lang('messages.blog_Headline2')</a>
 									<hr>
 									<div class="row">
 										<div class="col-lg-6 col-6 author text-start">
@@ -305,9 +307,9 @@
 								</a>
 								<div class="rts-blog__single--meta">
 									<div class="cat__date float-start text-left">
-										<a href="#" class="cat">News</a>
+										<a href="#" class="cat">@lang('messages.blog_Subtext3')</a>
 									</div>
-									<a href="##" class="title  pb-3">Discover Our Newest Features and Services</a>
+									<a href="##" class="title  pb-3">@lang('messages.blog_Headline3')</a>
 									<hr>
 									<div class="row">
 										<div class="col-lg-6 col-6 author text-start">
@@ -335,10 +337,10 @@
                 <div class="col-lg-5 order-change">
                     <div class="rts-whychoose__content">
 						<div class="badgeview">
-                            <div class="badge-bg-light ">Testimonials</div>
+                            <div class="badge-bg-light ">@lang('messages.Testimonials')</div>
                         </div>
                         <h3 class="rts-whychoose__content--title text-white" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">
-                            What Our Client Says
+                            @lang('messages.Testimonials_Subtext1')
                         </h3>
 					</div>
                         <!-- single content-->
@@ -348,12 +350,12 @@
                             <div class="swiper-slide">
                                 <div class="rts-testimonial__single">
                                     <div class="content">
-                                        <p>"Switching to Exonvest has been one of the best decisions I've made for my finances. Their customer service is exceptional, and their online banking platform is incredibly user-friendly."</p>
+                                        <p>@lang('messages.Testimonials_Headline1')</p>
                                     </div>
                                     <div class="author__meta">
                                         <div class="author__meta--details">
-                                            <a href="#">Fadi Ahmad</a>
-                                            <span>Business Owner</span>
+                                            <a href="#">@lang('messages.Testimonials_Head')</a>
+                                            <span>@lang('messages.Testimonials_name')</span>
                                         </div>
                                     </div>
                                 </div>
@@ -363,12 +365,12 @@
                             <div class="swiper-slide">
                                 <div class="rts-testimonial__single">
                                     <div class="content">
-                                        <p>"Switching to Exonvest has been one of the best decisions I've made for my finances. Their customer service is exceptional, and their online banking platform is incredibly user-friendly."</p>
+                                        <p>@lang('messages.Testimonials_Headline1')</p>
                                     </div>
                                     <div class="author__meta">
                                         <div class="author__meta--details">
-                                            <a href="#">Fadi Ahmad</a>
-                                            <span>Business Owner</span>
+                                            <a href="#">@lang('messages.Testimonials_Head')</a>
+                                            <span>@lang('messages.Testimonials_name')</span>
                                         </div>
                                     </div>
                                 </div>
@@ -378,12 +380,12 @@
                             <div class="swiper-slide">
                                 <div class="rts-testimonial__single">
                                     <div class="content">
-                                        <p>"Switching to Exonvest has been one of the best decisions I've made for my finances. Their customer service is exceptional, and their online banking platform is incredibly user-friendly."</p>
+                                        <p>@lang('messages.Testimonials_Headline1')</p>
                                     </div>
                                     <div class="author__meta">
                                         <div class="author__meta--details">
-                                            <a href="#">Fadi Ahmad</a>
-                                            <span>Business Owner</span>
+                                            <a href="#">@lang('messages.Testimonials_Head')</a>
+                                            <span>@lang('messages.Testimonials_name')</span>
                                         </div>
                                     </div>
                                 </div>
@@ -416,26 +418,5 @@
     <!-- WHY CHOOSE US END -->
 
   
-    <!-- CTA AREA -->
-    <div id="contact" class="rts-cta bg-white">
-        <div class="container">
-            <div class="row">
-				<div class="col-lg-7">
-					<h3 class="cta__title" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">
-						Stay Inspired</h3>
-					<p data-sal="slide-down" data-sal-delay="400" data-sal-duration="800">Be the first to know about new ethical brands, impactful stories, and tips for sustainable living. Subscribe to our newsletter and make every day count.</p>
-				</div>
-				<div class="col-lg-5">
-					<div class="cta-image rts-footer__widget footer__widget">
-						<form action="#" class="newsletter mx-40">
-                            <input type="email" class="home-one" name="email" placeholder="Enter mail" required>
-                            <span class="icon"><i class="fa-regular fa-envelope-open"></i></span>
-                            <button type="submit" class="view__btn" aria-label="Submit">Subscribe</button>
-                        </form>
-					</div>
-				</div>
-            </div>
-        </div>
-    </div>
-    <!-- CTA AREA END  -->
+    
 	@endsection

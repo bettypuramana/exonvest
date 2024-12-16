@@ -31,4 +31,12 @@ class HomeController extends Controller
     {
         return view('user.careers');
     }
+        public function brands()
+    {
+        return view('user.brands');
+    }
+        public function community()
+    {
+        return view('user.community');
+    }
 }

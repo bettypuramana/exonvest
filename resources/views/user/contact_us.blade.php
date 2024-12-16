@@ -1,4 +1,5 @@
 @extends('layouts.user.user_layout')
+@section('title', 'Exonvest || Contact Us')
 @section('content')
  <!-- shared hosting banner -->
  <div class="rts-hosting-banner rts-hosting-banner-bg banner-default-height">
@@ -20,20 +21,19 @@
     <section class="rts-contact-form no-bg pt--120 pb--120">
         <div class="container">
             <div class="row g-30 pb--120 justify-content-sm-center">
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-10">
                     <div class="single-contact-method">
                         <div class="method">
                             <div class="icon">
                                 <i class="fa-thin fa-map-location-dot"></i>
                             </div>
                             <div class="content w-220">
-                                <h5 class="info mb-0">123 Main Street,
-                                    New York, AV 10013</h5>
+                                <h5 class="info mb-0">11th Floor, Al Reem Tower, Westbay, Doha</h5>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-10">
                     <div class="single-contact-method">
                         <div class="method">
                             <div class="icon">
@@ -41,14 +41,13 @@
                             </div>
                             <div class="content w-220">
                                 <h5 class="info mb-0">
-                                    <a href="mailto:info@hostie.com">info@hostie.com</a> <br>
-                                    <a href="mailto:support@hostie.com">support@hostie.com</a>
+                                    <a href="mailto:hi@exonvest.com">hi@exonvest.com</a><br><br>
                                 </h5>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-10">
                     <div class="single-contact-method">
                         <div class="method">
                             <div class="icon">
@@ -56,8 +55,7 @@
                             </div>
                             <div class="content w-220">
                                 <h5 class="info mb-0">
-                                    <a href="callto:11112542174">(555) 123-4567</a> <br>
-                                    <a href="callto:11112542174">(111) 125- 42174</a>
+                                    <a href="tel:+97444112536">+974 44112536</a><br><br>
                                 </h5>
                             </div>
 
@@ -65,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-10">
                     <div class="single-contact-method">
                         <div class="method">
                             <div class="icon">
@@ -84,8 +82,7 @@
                             </div>
                             <div class="content w-220">
                                 <h5 class="info mb-0">
-                                    Mon-Fri: 9 AM – 6 PM
-                                    Saturday: 9 AM – 4 PM
+                                   Sunday To Thursday 8:30 AM To 5:00 PM
                                 </h5>
                             </div>
                         </div>
@@ -93,28 +90,9 @@
                 </div>
             </div>
             <div class="row gy-30 justify-content-center">
-                <div class="col-xl-6 col-lg-6 col-md-10">
-                    <div class="contact-form">
-                        <div class="contact-form__content" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">
-                            <div class="contact-form__content--image">
-                                <img src="{{asset('assets/images/contact/contact-form.png')}}" width="260" height="188" alt="">
-                            </div>
-                            <h1 class="contact-form__content--title">
-                                Ask a
-                                Question
-                            </h1>
-                            <p class="contact-form__content--description">
-                                Schedule a call today and one of our experts to help you decide which service is ideal for your business and budget.
-                            </p>
-                            <div class="contact__shape support-page">
-                                <img src="{{asset('assets/images/contact/contact__animated__arrow.svg')}}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-6 offset-xl-1 col-md-10">
+                <div class="col-xl-8 col-lg-8 col-md-8">
                     <div class="form">
-                        <h5>Send a message</h5>
+                        <h2 class="text-center">Send a message</h2>
                         <form class="form__content" method="post" action="https://html.themewant.com/hostie/mailer.php">
                             <div class="form__control">
                                 <input type="text" class="input-form" name="name" id="name" placeholder="what is your name?" required>
@@ -151,32 +129,9 @@
     <section class="rts-contact-map-area">
         <div class="section-inner">
             <div class="contact-map-area-fluid">
-                <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.288851207937!2d90.47855065!3d23.798243149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1663151706353!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.3489811443774!2d51.523538275963034!3d25.326068026467713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45dabdebf6332d%3A0x67e4e1afdba3ad99!2sParadigm%20Marketing%20%26%20Advertising!5e0!3m2!1sen!2sqa!4v1733985717121!5m2!1sen!2sqa" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
         </div>
     </section>
     <!-- CONTACT MAP END -->
-    <!-- CTA AREA -->
-    <div id="contact" class="rts-cta bg-white">
-        <div class="container">
-            <div class="row">
-				<div class="col-lg-7">
-					<h3 class="cta__title" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">
-						Stay Inspired</h3>
-					<p data-sal="slide-down" data-sal-delay="400" data-sal-duration="800">Be the first to know about new ethical brands, impactful stories, and tips for sustainable living. Subscribe to our newsletter and make every day count.</p>
-				</div>
-				<div class="col-lg-5">
-					<div class="cta-image rts-footer__widget footer__widget">
-						<form action="#" class="newsletter mx-40">
-                            <input type="email" class="home-one" name="email" placeholder="Enter mail" required>
-                            <span class="icon"><i class="fa-regular fa-envelope-open"></i></span>
-                            <button type="submit" class="view__btn" aria-label="Submit">Subscribe</button>
-                        </form>
-					</div>
-				</div>
-            </div>
-        </div>
-    </div>
-    <!-- CTA AREA END  -->
 	
 	@endsection

@@ -6,7 +6,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="description" content="Partnering with responsible brands to create a future of integrity, trust, and impact.">
     <meta name="keywords" content="Empowering Ethical Choices, Building a Better World">
+    <link rel="icon" href="{{asset('assets/images/favicon.webp')}}">
     <link rel="canonical" href="#">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Exonvest">
     <meta property="og:description" content="Partnering with responsible brands to create a future of integrity, trust, and impact.">
@@ -16,7 +18,7 @@
     <meta name="twitter:title" content="Empowering Ethical Choices, Building a Better World">
     <meta name="twitter:description" content="Partnering with responsible brands to create a future of integrity, trust, and impact.">
     <meta name="twitter:image" content="">
-    <title>Exonvest || Home</title>
+    <title>@yield('title')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -44,18 +46,11 @@
                 <div class="rts-header__wrapper">
                     <!-- FOR LOGO -->
                     <div class="rts-header__logo">
-                        <a href="index.html" class="site-logo">
+                        <a href="{{url(empty(app()->getLocale())?'english'.'/':request()->segment(1).'/')}}" class="site-logo">
                             <!---<img class="logo-white" src="assets/images/logo/logo-1.svg" alt="Hostie">
                             <img class="logo-dark" src="assets/images/logo/logo-4.svg" alt="Hostie">-->
-							<h3 class="logoname">exonvest</h3>
-                        <?php
-                        $url= url()->current();
-                        ?>
-                        <ul class="list-inline d-flex  hours align-items-center mb-0" style="color:white;"
-                        >
-                            <li class="list-inline-item mr-5"><a href="@if(empty(app()->getLocale())){{url('en')}}@else{!! str_replace('ar', 'en', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">English</a></li>
-                            <li class="list-inline-item mr-5"><a href="@if(empty(app()->getLocale())){{url('ar')}}@else{!! str_replace('en', 'ar', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">عربي</a></li>
-                        </ul>
+							<h3 class="logoname">@lang('messages.exonvest')</h3>
+                        
                         </a>
                     </div>
                     <!-- FOR NAVIGATION MENU -->
@@ -63,20 +58,30 @@
                     <nav class="rts-header__menu" id="mobile-menu">
                         <div class="hostie-menu">
                             <ul class="list-unstyled hostie-desktop-menu">
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/':app()->getLocale().'/')}}">@lang('messages.home')</a></li>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'about':app()->getLocale().'/'.'about')}}">@lang('messages.about_us')</a></li>
-                                <li class="menu-item"><a href="#brands">Brands</a></li>
-                                <li class="menu-item"><a href="#Community">Community</a></li>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'careers':app()->getLocale().'/'.'careers')}}">Careers</a></li>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'blog':app()->getLocale().'/'.'blog')}}">Blog</a></li>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'contact_us':app()->getLocale().'/'.'contact_us')}}">@lang('messages.contact')</a></li>
-                                
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/':request()->segment(1).'/')}}">@lang('messages.home')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'about':request()->segment(1).'/'.'about')}}">@lang('messages.about_us')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'brands':request()->segment(1).'/'.'brands')}}">@lang('messages.brands')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'careers':request()->segment(1).'/'.'careers')}}">@lang('messages.Careers')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'blog':request()->segment(1).'/'.'blog')}}">@lang('messages.Blog')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'contact_us':request()->segment(1).'/'.'contact_us')}}">@lang('messages.contact')</a></li>
+
                             </ul>
                         </div>
                     </nav>
                     <!-- FOR HEADER RIGHT -->
                     <div class="rts-header__right">
-                        <a href="##" class="login__btn" target="_blank">Explore Now</a>
+                        
+                        <?php
+                        $url= url()->current();
+                        ?>
+                        <ul class="list-inline d-flex  hours align-items-center mb-0">
+                            <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('english')}}@else{!! str_replace('arabic', 'english', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">English </a> </li> <span class="text-white"> / </span> 
+                            <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('arabic')}}@else{!! str_replace('english', 'arabic', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">عربي</a></li>
+                        </ul>
+                        
+                        <a href="##" class="login__btn" target="_blank">@lang('messages.Explore_Now')</a>
+                        
                         <button id="menu-btn" aria-label="Menu" class="mobile__active menu-btn"><i class="fa-sharp fa-solid fa-bars"></i></button>
                     </div>
                 </div>
@@ -84,20 +89,44 @@
         </div>
     </header>
     <!-- HEADER AREA END -->
-    @yield('content') 
+    @yield('content')
+    
+    
+    <!-- CTA AREA -->
+    <div id="contact" class="rts-cta bg-white">
+        <div class="container">
+            <div class="row">
+				<div class="col-lg-7">
+					<h3 class="cta__title" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">
+					@lang('messages.cta')</h3>
+					<p data-sal="slide-down" data-sal-delay="400" data-sal-duration="800">@lang('messages.cta_Subtext1')</p>
+				</div>
+				<div class="col-lg-5">
+					<div class="cta-image rts-footer__widget footer__widget">
+						<form action="#" class="newsletter mx-40">
+                            <input type="email" class="home-one" name="email" placeholder="Enter mail" required>
+                            <span class="icon"><i class="fa-regular fa-envelope-open"></i></span>
+                            <button type="submit" class="view__btn" aria-label="Submit">@lang('messages.cta_btn')</button>
+                        </form>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+    <!-- CTA AREA END  -->
     <footer class="rts-footer site-footer-one section__padding">
         <div class="container">
             <div class="row">
                 <!-- widget -->
                 <div class="col-lg-2 col-md-5 col-sm-6 rts-footer__widget--column">
                     <div class="rts-footer__widget footer__widget extra-padding">
-                        <h5 class="widget-title">Menu</h5>
+                        <h5 class="widget-title">@lang('messages.menu')</h5>
                         <div class="rts-footer__widget--menu ">
                             <ul>
-                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/':app()->getLocale().'/')}}">Home</a></li>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'about':app()->getLocale().'/'.'about')}}">About Us</a></li>
-                                <li class="menu-item"><a href="#brands">Brands</a></li>
-                                <li class="menu-item"><a href="#Community">Community</a></li>
+                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/':app()->getLocale().'/')}}">@lang('messages.home')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'about':app()->getLocale().'/'.'about')}}">@lang('messages.about_us')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'brands':request()->segment(1).'/'.'brands')}}">@lang('messages.brands')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li>
                             </ul>
                         </div>
                     </div>
@@ -106,12 +135,12 @@
                 <!-- widget -->
                 <div class="col-lg-2 col-md-5 col-sm-6 rts-footer__widget--column">
                     <div class="rts-footer__widget footer__widget extra-padding">
-                        <h5 class="widget-title">Quick Links</h5>
+                        <h5 class="widget-title">@lang('messages.Quick_Links')</h5>
                         <div class="rts-footer__widget--menu ">
                             <ul>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'careers':app()->getLocale().'/'.'careers')}}">Careers</a></li>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'blog':app()->getLocale().'/'.'blog')}}">Blog</a></li>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'contact_us':app()->getLocale().'/'.'contact_us')}}">Contact Us</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'careers':app()->getLocale().'/'.'careers')}}">@lang('messages.Careers')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'blog':app()->getLocale().'/'.'blog')}}">@lang('messages.Blog')</a></li>
+                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'contact_us':app()->getLocale().'/'.'contact_us')}}">@lang('messages.contact')</a></li>
                             </ul>
                         </div>
                     </div>
@@ -120,12 +149,12 @@
                 <!-- widget -->
                 <div class="col-lg-4 col-md-4 col-sm-6 rts-footer__widget--column">
                     <div class="rts-footer__widget footer__widget extra-padding">
-                        <h5 class="widget-title">Contact Information</h5>
+                        <h5 class="widget-title">@lang('messages.Contact_Information')</h5>
                         <div class="rts-footer__widget--menu ">
                             <ul class="list-unstyled widget--menu-j">
 							  <li><i class="fa fa-phone"> </i> <a href="tel:+97444112536">+97444112536</a></li>
 							  <li><i class="fa fa-envelope-open"> </i>  <a href="mailto:hi@exonvest.com"> hi@exonvest.com</a></li>
-							  <li><i class="fa fa-map-marker"> </i>  11th Floor, Al Reem Tower, Westbay, Doha</li>
+							  <li><i class="fa fa-map-marker"> </i>@lang('messages.address')</li>
 							</ul>
                         </div>
                     </div>
@@ -134,26 +163,31 @@
                 <!-- widget -->
                 <div class="col-lg-4 col-md-6 col-sm-6 rts-footer__widget--column">
                     <div class="rts-footer__widget footer__widget">
-                        <h5>Exonvest - Exelling On Investments</h5>
-						<p>Supporting Ethical Partners, Building a Better World</p>
+                        <h5>@lang('messages.subcription')</h5>
+						<p>@lang('messages.subcription_p')</p>
 						<div class="social__media--list">
-						  <a href="https://www.instagram.com/" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-instagram"></i></a>
-						 <a href="https://www.x.com/" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-whatsapp"></i></a>   
+						  <a href="https://www.linkedin.com/company/exonvest/" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-linkedin"></i></a>
+						  
+						 <a href="https://www.instagram.com/exonvest/" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-instagram"></i></a>
+						 
+						 <a href="https://www.facebook.com/Exonvest/" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-facebook"></i></a>
 
-						   <a href="https://www.x.com/" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-x-twitter"></i></a>
+						   <a href="https://x.com/exonvest" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-x-twitter"></i></a> 
+						   
+						   <a href="https://www.youtube.com/channel/UCmguIwVbySkY92UZroDXySw" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-youtube"></i></a>
 						</div>
                     </div>
                 </div>
                 <!-- widget end -->
             </div>
         </div>
-        
+
     </footer>
 	<div class="bg-theam">
 		<div class="container">
 			<div class="row">
 				<div class="rts-footer__copyright text-center">
-					<p>&copy; Copyright Exonvest 2024. All Rights Reserved.</p>
+					<p>&copy; @lang('messages.copyright')</p>
 				</div>
 			</div>
 		</div>
@@ -170,14 +204,14 @@
         <div class="mobile-menu-main">
             <nav class="nav-main mainmenu-nav mt--30">
                 <ul class="mainmenu metismenu" id="mobile-menu-active">
-                    <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/':app()->getLocale().'/')}}">Home</a></li>
-					 <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/'.'about':app()->getLocale().'/'.'about')}}">About Us</a></li>
-					 <li><a  class="main" href="#brands">Brands</a></li>
-					 <li><a  class="main" href="#Community">Community</a></li>
-					 <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/'.'careers':app()->getLocale().'/'.'careers')}}">Careers</a></li>
-					 <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/'.'blog':app()->getLocale().'/'.'blog')}}">Blog</a></li>
-					 <li><a  class="main" href="{{url(empty(app()->getLocale())?'en'.'/'.'contact_us':app()->getLocale().'/'.'contact_us')}}">Contact Us</a></li>
-                </ul>
+                    <li class="main"><a href="{{url(empty(app()->getLocale())? '/':request()->segment(1).'/')}}">@lang('messages.home')</a></li>
+                                <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'about':request()->segment(1).'/'.'about')}}">@lang('messages.about_us')</a></li>
+                                <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'brands':request()->segment(1).'/'.'brands')}}">@lang('messages.brands')</a></li>
+                                <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li>
+                                <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'careers':request()->segment(1).'/'.'careers')}}">@lang('messages.Careers')</a></li>
+                                <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'blog':request()->segment(1).'/'.'blog')}}">@lang('messages.Blog')</a></li>
+                                <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'contact_us':request()->segment(1).'/'.'contact_us')}}">@lang('messages.contact')</a></li>
+   </ul>
             </nav>
 
             <ul class="social-area-one pl--20 mt--100">
@@ -213,8 +247,8 @@
     <script defer src="{{asset('assets/js/plugins.min.js')}}"></script>
     <!-- main js -->
     <script defer src="{{asset('assets/js/main.js')}}"></script>
-	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C89scichPD02hX1v7vAxqUQ0WRs94tn+4Z9YpqpgqT6k5D8ayGVRApAHm6ktPBzUg"   
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C89scichPD02hX1v7vAxqUQ0WRs94tn+4Z9YpqpgqT6k5D8ayGVRApAHm6ktPBzUg"
  crossorigin="anonymous"></script>
 
  @yield('js')
