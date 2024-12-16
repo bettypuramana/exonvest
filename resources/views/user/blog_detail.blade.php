@@ -1,4 +1,5 @@
 @extends('layouts.user.user_layout')
+@section('title', 'Exonvest || Blog Detail')
 @section('content')
 <div class="rts-hosting-banner rts-hosting-banner-bg banner-default-height">
         <div class="container">
@@ -86,15 +87,6 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facere architecto obcaecati quam temporibus aut sunt, perferendis mollitia nisi, vel hic nostrum? Numquam eos autem vel rem minima sint natus, voluptatem voluptatum quia nulla fugiat reprehenderit porro, harum fuga? Neque explicabo voluptatem expedita consectetur in, sunt nisi non id doloremque.</p>
                     </article>
                     <div class="blog-info">
-                        <div class="blog-tags">
-                            <div class="tags-title">tags:</div>
-                            <div class="blog-tags__list">
-                                <a href="#">Service</a>
-                                <a href="#">Hosting</a>
-                                <a href="#">Vps</a>
-                                <a href="#">Reseller</a>
-                            </div>
-                        </div>
                         <div class="blog-share">
                             <div class="share">Share:</div>
                             <div class="social__media--list">
@@ -104,40 +96,6 @@
                                 <a href="#" class="media"><i class="fa-brands fa-twitter"></i></a>
                                 <a href="#" class="media"><i class="fa-brands fa-behance"></i></a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="blog-author">
-                        <div class="blog-author__info">
-                            <div class="author-image">
-                                <img src="{{asset('assets/images/blog/author.jpg')}}" alt="">
-                            </div>
-                            <div class="author-content">
-                                <a href="#">Maria Sara Khan</a>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, temporibus?</p>
-                                <div class="social__media--list">
-                                    <a href="#" class="media"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#" class="media"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#" class="media"><i class="fa-brands fa-linkedin"></i></a>
-                                    <a href="#" class="media"><i class="fa-brands fa-twitter"></i></a>
-                                    <a href="#" class="media"><i class="fa-brands fa-behance"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-comment mb-5 mb-lg-0">
-                        <div class="blog-comment__template">
-                            <h4>Share your opinion here !</h4>
-                            <form action="#" class="comment-template">
-                                <div class="input-area">
-                                    <input type="text" placeholder="Enter your name" required>
-                                    <input type="text" placeholder="Enter your email" required>
-                                </div>
-                                <div class="input-area-full">
-                                    <input type="text" placeholder="Enter your Subject" required>
-                                </div>
-                                <textarea name="msg" class="input-area-full w-full" placeholder="Enter Your Message"></textarea>
-                                <button class="rts-btn rts-btn-secondary w-auto" type="submit">Submit Review</button>
-                            </form>
                         </div>
                     </div>
                 </div>

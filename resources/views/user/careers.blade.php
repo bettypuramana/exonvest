@@ -1,4 +1,5 @@
 @extends('layouts.user.user_layout')
+@section('title', 'Exonvest || Careers')
 @section('content')
  <!-- shared hosting banner -->
  <div class="rts-hosting-banner rts-hosting-banner-bg banner-default-height">
@@ -60,29 +61,5 @@
     </section>
     <!-- CONTACT END -->
 
-   
-    <!-- CTA AREA -->
-    <div id="contact" class="rts-cta bg-white">
-        <div class="container">
-            <div class="row">
-				<div class="col-lg-7">
-					<h3 class="cta__title" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">
-						Stay Inspired</h3>
-					<p data-sal="slide-down" data-sal-delay="400" data-sal-duration="800">Be the first to know about new ethical brands, impactful stories, and tips for sustainable living. Subscribe to our newsletter and make every day count.</p>
-				</div>
-				<div class="col-lg-5">
-					<div class="cta-image rts-footer__widget footer__widget">
-						<form action="#" class="newsletter mx-40">
-                            <input type="email" class="home-one" name="email" placeholder="Enter mail" required>
-                            <span class="icon"><i class="fa-regular fa-envelope-open"></i></span>
-                            <button type="submit" class="view__btn" aria-label="Submit">Subscribe</button>
-                        </form>
-					</div>
-				</div>
-            </div>
-        </div>
-    </div>
-    <!-- CTA AREA END  -->
-	
-	
+
 	@endsection
