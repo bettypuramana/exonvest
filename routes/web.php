@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Auth::routes();
 $locale = request()->segment(1);
 
 Route::middleware('setLocale')->prefix($locale)->group(function() {
@@ -29,6 +28,8 @@ Route::get('/community', [App\Http\Controllers\User\HomeController::class, 'comm
 Route::get('/blog_detail', [App\Http\Controllers\User\HomeController::class, 'blog_detail'])->name('user.blog_detail');
 Route::get('/careers', [App\Http\Controllers\User\HomeController::class, 'careers'])->name('user.careers');
 });
+
+/********* dashboard */
 Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 
 /**** Category */
@@ -40,4 +41,16 @@ Route::get('/delete_category/{id}', [App\Http\Controllers\Admin\CategoryControll
 /***** Contact */
 Route::get('/contact', [App\Http\Controllers\Admin\ContactController::class, 'index'])->name('admin.contact');
 Route::get('/delete_contact/{id}', [App\Http\Controllers\Admin\ContactController::class, 'destroy'])->name('delete_contact');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/****** Brand */
+Route::get('/admin/brand', [App\Http\Controllers\Admin\BrandController::class, 'index'])->name('admin.brand');
+Route::get('/delete_brand/{id}', [App\Http\Controllers\Admin\BrandController::class, 'destroy'])->name('delete_brand');
+Route::get('/brand_add', [App\Http\Controllers\Admin\BrandController::class, 'brand_add'])->name('admin.brand_add');
+Route::post('/store_brand', [App\Http\Controllers\Admin\BrandController::class, 'store'])->name('store_brand');
+
+/******* careers */
+Route::get('/career', [App\Http\Controllers\Admin\CareerController::class, 'index'])->name('admin.career');
+Route::get('/delete_career/{id}', [App\Http\Controllers\Admin\CareerController::class, 'destroy'])->name('delete_career');
+
+Auth::routes();

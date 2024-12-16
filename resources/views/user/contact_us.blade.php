@@ -100,14 +100,14 @@
                             </div>
                             <div class="form__control">
                                 <input type="text" class="input-form" name="phone" id="phone" placeholder="Phone Number" required>
-                                <select name="select" id="select" class="input-form">
+                                <!-- <select name="select" id="select" class="input-form">
                                     <option value="1">Select a state</option>
                                     <option value="Bangladesh">Bangladesh</option>
                                     <option value="India">India</option>
                                     <option value="Pakistan">Pakistan</option>
                                     <option value="Nepal">Nepal</option>
                                     <option value="Maldives">Maldives</option>
-                                </select>
+                                </select> -->
                             </div>
 
                             <textarea name="message" id="message" cols="30" rows="10" placeholder="A brief description about your consultation" required></textarea>
