@@ -53,4 +53,12 @@ Route::post('/store_brand', [App\Http\Controllers\Admin\BrandController::class, 
 Route::get('/career', [App\Http\Controllers\Admin\CareerController::class, 'index'])->name('admin.career');
 Route::get('/delete_career/{id}', [App\Http\Controllers\Admin\CareerController::class, 'destroy'])->name('delete_career');
 
+/********* news letter */
+Route::get('/news_letter', [App\Http\Controllers\Admin\NewsletterController::class, 'index'])->name('admin.news_letter');
+Route::get('/delete_news_letter/{id}', [App\Http\Controllers\Admin\NewsletterController::class, 'destroy'])->name('delete_news_letter');
+Route::get('/export', [App\Http\Controllers\Admin\NewsletterController::class, 'export'])->name('admin.export');
+
+/********* blog */
+Route::get('/admin/blog', [App\Http\Controllers\Admin\BlogController::class, 'index'])->name('admin.blog');
+
 Auth::routes();
