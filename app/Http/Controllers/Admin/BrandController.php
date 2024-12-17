@@ -52,6 +52,10 @@ class BrandController extends Controller
         $insertbrand->brand_en=$request->input('brand_en');
         $insertbrand->description_en=$request->input('description_en');
         $insertbrand->description_ar=$request->input('description_ar');
+        $insertbrand->facebook=$request->input('facebook');
+        $insertbrand->instagram=$request->input('instagram');
+        $insertbrand->youtube=$request->input('youtube');
+        $insertbrand->twitter=$request->input('twitter');
 
         if ($request->file('image')!=null)
         {

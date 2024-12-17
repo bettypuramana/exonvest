@@ -71,6 +71,42 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3">
+                                <label class="mb-2">Facebook</label>
+                                <input type="text" class="form-control" name="facebook" id="facebook" placeholder="facebook " value="{{old('facebook')}}"/>
+                                @error('facebook')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3">
+                                <label class="mb-2">Instagram</label>
+                                <input type="text" class="form-control" name="instagram" id="instagram" placeholder="instagram " value="{{old('instagram')}}"/>
+                                @error('instagram')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3">
+                                <label class="mb-2">Youtube</label>
+                                <input type="text" class="form-control" name="youtube" id="youtube" placeholder="youtube " value="{{old('youtube')}}"/>
+                                @error('youtube')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3">
+                                <label class="mb-2">Twitter</label>
+                                <input type="text" class="form-control" name="twitter" id="twitter" placeholder="twitter" value="{{old('twitter')}}"/>
+                                @error('twitter')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
 
                         
                         <div class="col-sm-6">

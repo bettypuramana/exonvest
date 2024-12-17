@@ -81,12 +81,23 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="#blog" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-newspaper-o green_color"></i> <span>Blog</span></a>
+                            <ul class="collapse list-unstyled" id="blog">
+                            <!-- <li><a href="{{route('admin.brand_add')}}">> <span>Add</span></a></li> -->
+                            <li><a href="{{route('admin.blog')}}">> <span>List</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="{{route('admin.contact')}}">
                             <i class="fa fa-paper-plane red_color"></i> <span>Contact</span></a>
                         </li> 
                         <li>
                             <a href="{{route('admin.career')}}">
                             <i class="fa fa-graduation-cap blue2_color"></i> <span>Careers</span></a>
+                        </li> 
+                        <li>
+                            <a href="{{route('admin.news_letter')}}">
+                            <i class="fa  fa-users orange_color"></i> <span>News Letter</span></a>
                         </li> 
                        
                         
