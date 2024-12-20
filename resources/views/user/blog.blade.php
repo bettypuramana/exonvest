@@ -8,7 +8,7 @@
                 <div class="banner-area">
                     <div class="rts-hosting-banner rts-hosting-banner__content w-530 contact__banner">
                         <h4 class="text-white banner-title">
-                            Blog
+                            @lang('messages.Blog')
                         </h4>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                             </div>
                             <a href="{{route('user.blog_detail')}}" class="title">Attentive was born in 2015 help
                                 sales teams VPS hosting</a>
-                          
+
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                             </div>
                             <a href="{{route('user.blog_detail')}}" class="title">Attentive was born in 2015 help
                                 sales teams VPS hosting</a>
-                        
+
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                             </div>
                             <a href="{{route('user.blog_detail')}}" class="title">Attentive was born in 2015 help
                                 sales teams VPS hosting</a>
-                        
+
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                             </div>
                             <a href="{{route('user.blog_detail')}}" class="title">Attentive was born in 2015 help
                                 sales teams VPS hosting</a>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -89,6 +89,6 @@
                 </section>
 
 
-	
-	
+
+
 	@endsection

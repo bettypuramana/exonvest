@@ -8,7 +8,7 @@
                 <div class="banner-area">
                     <div class="rts-hosting-banner rts-hosting-banner__content w-530 contact__banner">
                         <h4 class="text-white banner-title">
-                            Contact Us
+                            @lang('messages.contact')
                         </h4>
                     </div>
                 </div>
@@ -133,5 +133,5 @@
         </div>
     </section>
     <!-- CONTACT MAP END -->
-	
+
 	@endsection
