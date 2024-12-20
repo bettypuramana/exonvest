@@ -7,7 +7,7 @@
                 <div class="banner-area">
                     <div class="rts-hosting-banner rts-hosting-banner__content w-530 contact__banner">
                         <h4 class="text-white banner-title">
-                            Blog Details
+                            @lang('messages.blog_details')
                         </h4>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="rts-sidebar">
-                       
+
                         <!-- single widget start -->
                         <div class="rts-single-widget recentpost-widget">
                             <h4 class="widget-title">Recent Post</h4>
@@ -188,9 +188,9 @@
         </div>
     </div>
     <!-- BLOG DETAILS END -->
-	
-	
-	
-	
-	
+
+
+
+
+
 	@endsection

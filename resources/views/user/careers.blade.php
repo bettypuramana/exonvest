@@ -8,7 +8,7 @@
                 <div class="banner-area">
                     <div class="rts-hosting-banner rts-hosting-banner__content w-530 contact__banner">
                         <h4 class="text-white banner-title">
-                            Careers
+                            @lang('messages.Careers')
                         </h4>
                     </div>
                 </div>
@@ -20,13 +20,13 @@
     <!-- CONTACT START -->
     <section class="rts-contact-form pt--120 pb--120" style="background-color: #f4f4f4;">
         <div class="container">
-           
+
             <div class="row gy-30 justify-content-center">
                 <div class="col-xl-6 col-lg-4 col-md-10">
                     <div class="contact-form">
-                       
+
                                 <img src="https://www.alhenzablaw.com/webassets/images/book/A7404203%20copy.jpg" alt="">
-                           
+
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-8 offset-xl-1 col-md-10">
@@ -44,7 +44,7 @@
 
                             <div class="form__control">
                                 <input type="file" class="input-form" name="" id="" placeholder="" required>
-                               
+
                             </div>
                             <textarea name="message" id="message" cols="30" rows="10" placeholder="Cover Letter*" required></textarea>
                             <input type="checkbox" name="checkbox" id="checkbox">

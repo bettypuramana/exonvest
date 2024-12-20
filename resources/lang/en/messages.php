@@ -24,7 +24,7 @@ return [
 'slider_para'=>'Partnering with responsible brands to create a future of integrity, trust, and impact',
 'slider_btn'=>'Discover Ethically Sourced Brands',
 'about_head'=>'About Exonvest',
-'about_headding'=>'Together, Shaping a Sustainable Future',
+'about_headding'=>'Together, Shaping a Sustainable<br> Future',
 'about_Para'=>'At Exonvest, we bridge the gap between conscious consumers and ethical brands. Our mission is simple: to make responsible choices accessible and impactful. By connecting with brands that prioritize sustainability and fairness, every decision you make contributes to a brighter, greener tomorrow.',
 'about_btn'=>'Learn More About Us',
 'about_p-1'=>'Connecting businesses with sustainable brands',
@@ -64,16 +64,26 @@ return [
 
 'cta'=>' Stay Inspired',
 'cta_Subtext1'=>'Be the first to know about new ethical brands, impactful stories, and sustainable living tips. Sign up for our newsletter and make every day count.',
-'cta_btn'=>'Newsletter:',
+'cta_btn'=>'Newsletter',
+
+
+'about_heading'=>'Connecting Ethical Values to Everyday Choices',
+'about_sub_head1'=>'Who We Are:',
+'about_sub1_para'=>'At Exonvest, we believe that conscious consumerism is the foundation of a better future. We are more than a network—we are a movement to support ethically sourced brands and empower individuals to make choices that matter.',
+'about_sub_head2'=>'What We Do:',
+'about_sub2_para'=>'We identify and partner with businesses that uphold the highest standards of sustainability, transparency, and social responsibility. By building a network of trusted brands, Exonvest simplifies the journey for consumers seeking to align their values with their purchases.',
 
 
 
+'Mission'=>'Mission',
+'Mission_cnt'=>'To empower people and businesses to drive meaningful change by fostering connections built on trust, transparency, and shared values.',
+
+'Vision'=>'Vision',
+'Vision_cnt'=>'To create a global platform where every choice is rooted in purpose, and every partnership contributes to a more sustainable and ethical world.',
 
 
-
-
-
-
+'about_us'=>'About Us',
+'blog_details'=>'Blog Details',
 
 
 
