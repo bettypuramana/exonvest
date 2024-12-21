@@ -4,8 +4,8 @@
         <div class="col-md-12">
             <div class="page_title">
                 <div class="d-flex justify-content-between">
-                    <h2>Blog</h2>
-                    <a href="{{route('admin.blog_add')}}" class="btn cur-p btn-warning">Add</a>
+                    <h2>Testimonial</h2>
+                    <a href="{{route('admin.testimonial_add')}}" class="btn cur-p btn-warning">Add</a>
                 </div>
             </div>
 
@@ -35,7 +35,8 @@
                                  <tr>
                                     <th style="width: 2%">No</th>
                                     <th style="width: 30%">Title</th>
-                                    <th style="width: 30%">Date</th>
+                                    <th style="width: 30%">Name</th>
+                                    <th style="width: 30%">Designation</th>
                                     <th>Image</th>
                                     <th>Action</th>
                                  </tr>
@@ -44,16 +45,17 @@
                                 @php
                                     $i=1;
                                     @endphp
-                                    @if(!empty($blog))
-                                    @foreach($blog as $row)
+                                    @if(!empty($testimonial))
+                                    @foreach($testimonial as $row)
                                  <tr>
                                     <td>{{$i}}</td>
                                     <td>{{$row->title_en}}/{{$row->title_ar}}</td>
-                                    <td>{{$row->date}}</td>
-                                    <td><img style="width:60px;" src="{{ asset('uploads/blog/'.$row->main_image) }}"></td>
+                                    <td>{{$row->name_en}}/{{$row->name_ar}}</td>
+                                    <td>{{$row->job_title_en}}/{{$row->job_title_ar}}</td>
+                                    <td><img style="width:60px;" src="{{ asset('uploads/testimonial/'.$row->image) }}"></td>
                                     <td class="project_progress">
-                                       <a href="{{ route('edit_blog', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to edit this record?')" class="fa fa-edit text-warning"></a> &nbsp;&nbsp;&nbsp;
-                                       <a href="{{ route('delete_blog', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a>
+                                       <a href="{{ route('edit_testimonial', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to edit this record?')" class="fa fa-edit text-warning"></a> &nbsp;&nbsp;&nbsp;
+                                       <a href="{{ route('delete_testimonial', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a>
                                     </td>
                                  </tr>
                                 @php

@@ -83,8 +83,22 @@
                         <li>
                             <a href="#blog" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-newspaper-o green_color"></i> <span>Blog</span></a>
                             <ul class="collapse list-unstyled" id="blog">
-                            <!-- <li><a href="{{route('admin.brand_add')}}">> <span>Add</span></a></li> -->
+                            <li><a href="{{route('admin.blog_add')}}">> <span>Add</span></a></li>
                             <li><a href="{{route('admin.blog')}}">> <span>List</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#testi" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-newspaper-o green_color"></i> <span>Testimonial</span></a>
+                            <ul class="collapse list-unstyled" id="testi">
+                            <li><a href="{{route('admin.testimonial_add')}}">> <span>Add</span></a></li>
+                            <li><a href="{{route('admin.testimonial')}}">> <span>List</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#tag" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-tag olivegreen_color"></i> <span>Tag</span></a>
+                            <ul class="collapse list-unstyled" id="tag">
+                            <li><a href="{{route('admin.tag_add')}}">> <span>Add</span></a></li>
+                            <li><a href="{{route('admin.tag')}}">> <span>List</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -165,7 +179,7 @@
                     <!-- footer -->
                     <div class="container-fluid">
                         <div class="footer">
-                            <p>Copyright © 2018 Designed by html.design. All rights reserved.
+                            <p>Copyright © {{ date('Y') }}  All rights reserved <a href="#">Exonvest</a>.
                             </p>
                         </div>
                     </div>
