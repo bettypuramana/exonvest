@@ -50,7 +50,7 @@
                             <!---<img class="logo-white" src="assets/images/logo/logo-1.svg" alt="Hostie">
                             <img class="logo-dark" src="assets/images/logo/logo-4.svg" alt="Hostie">-->
 							<h3 class="logoname">@lang('messages.exonvest')</h3>
-                        
+
                         </a>
                     </div>
                     <!-- FOR NAVIGATION MENU -->
@@ -71,17 +71,17 @@
                     </nav>
                     <!-- FOR HEADER RIGHT -->
                     <div class="rts-header__right">
-                        
+
                         <?php
                         $url= url()->current();
                         ?>
                         <ul class="list-inline d-flex  hours align-items-center mb-0">
-                            <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('english')}}@else{!! str_replace('arabic', 'english', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">English </a> </li> <span class="text-white"> / </span> 
+                            <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('english')}}@else{!! str_replace('arabic', 'english', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">English </a> </li> <span class="text-white"> / </span>
                             <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('arabic')}}@else{!! str_replace('english', 'arabic', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">عربي</a></li>
                         </ul>
-                        
+
                         <a href="##" class="login__btn" target="_blank">@lang('messages.Explore_Now')</a>
-                        
+
                         <button id="menu-btn" aria-label="Menu" class="mobile__active menu-btn"><i class="fa-sharp fa-solid fa-bars"></i></button>
                     </div>
                 </div>
@@ -90,8 +90,8 @@
     </header>
     <!-- HEADER AREA END -->
     @yield('content')
-    
-    
+
+
     <!-- CTA AREA -->
     <div id="contact" class="rts-cta bg-white">
         <div class="container">
@@ -104,7 +104,7 @@
 				<div class="col-lg-5">
 					<div class="cta-image rts-footer__widget footer__widget">
 						<form action="#" class="newsletter mx-40">
-                            <input type="email" class="home-one" name="email" placeholder="Enter mail" required>
+                            <input type="email" class="home-one" name="email" placeholder="@lang('messages.Enter_mail')" required>
                             <span class="icon"><i class="fa-regular fa-envelope-open"></i></span>
                             <button type="submit" class="view__btn" aria-label="Submit">@lang('messages.cta_btn')</button>
                         </form>
@@ -167,13 +167,13 @@
 						<p>@lang('messages.subcription_p')</p>
 						<div class="social__media--list">
 						  <a href="https://www.linkedin.com/company/exonvest/" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-linkedin"></i></a>
-						  
+
 						 <a href="https://www.instagram.com/exonvest/" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-instagram"></i></a>
-						 
+
 						 <a href="https://www.facebook.com/Exonvest/" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-facebook"></i></a>
 
-						   <a href="https://x.com/exonvest" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-x-twitter"></i></a> 
-						   
+						   <a href="https://x.com/exonvest" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-x-twitter"></i></a>
+
 						   <a href="https://www.youtube.com/channel/UCmguIwVbySkY92UZroDXySw" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-youtube"></i></a>
 						</div>
                     </div>

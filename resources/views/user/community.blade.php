@@ -22,17 +22,12 @@
             <div class="row justify-content-sm-center justify-content-md-start g-30">
                 <div class="col-lg-12 col-md-6 col-sm-10">
                     <div class="rts-blog__single">
-                        <h3>Welcome to Community</h3>
+                        <h3>@lang('messages.welcome_to_community')</h3>
                         <img class="blog__thumb" src="{{ asset('assets/images/about/Community_image.png') }}"
                             alt="blog post thumb">
 
                         <div class="rts-blogs pt-3 pb-3">
-                            <p class="text-left">Exonvest is proud to offer an incredible range of shopping, dining,
-                                leisure, and hospitality experiences through some of the world’s most iconic brands. With a
-                                presence across the Middle East, North Africa, Türkiye, Europe, and beyond, we bring
-                                exceptional experiences directly to you. Whether you're shopping your favorite brands online
-                                or enjoying delicious meals from popular food chains at home, there's something for
-                                everyone. Discover it all with Exonvest!</p>
+                            <p class="text-left">@lang('messages.Community_para')</p>
                         </div>
                     </div>
                 </div>
