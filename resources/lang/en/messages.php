@@ -85,18 +85,30 @@ return [
 'about_us'=>'About Us',
 'blog_details'=>'Blog Details',
 
+'welcome_to_community'=>'Welcome to Community',
+'Community_para'=>'Exonvest is proud to offer an incredible range of shopping, dining, leisure, and hospitality experiences through some of the world’s most iconic brands. With a presence across the Middle East, North Africa, Türkiye, Europe, and beyond, we bring exceptional experiences directly to you. Whether you are shopping your favorite brands online or enjoying delicious meals from popular food chains at home, there is something for everyone. Discover it all with Exonvest!',
 
+'Careers_form_para'=>'If you didn’t find a suitable position available you can still submit your CV to a desired position using the form below',
+'career_name_placeholder'=>'what is your name?',
+'career_email_placeholder'=>'Email Address',
+'career_phno_placeholder'=>'Phone Number',
+'career_position_placeholder'=>'Position Apply',
+'career_coverletter_placeholder'=>'Cover Letter*',
+'career_appln_agreement_terms'=>'By submitting your information you provide written consent
+                                to hostie and its family of brands contacting you.',
+'Submit_Now'=>'Submit Now',
+'Contactus_location_card'=>'11th Floor, Al Reem Tower, Westbay, Doha',
+'Contactus_time_card'=>'Sunday To Thursday 8:30 AM To 5:00 PM',
+'Contactus_message_head'=>'Send a message',
+'Contactus_name_placeholder'=>'what is your name?',
+'Contactus_email_placeholder'=>'Email Address',
+'Contactus_phno_placeholder'=>'Phone Number',
+'Contactus_desc_placeholder'=>'A brief description about your consultation',
+'Contactus_appln_agreement_terms'=>'By submitting your information you provide written consent
+                                to hostie and its family of brands contacting you.',
+'Contactus_Submit_Now'=>'Submit Now',
 
-
-
-
-
-
-
-
-
-
-
+'Enter_mail'=>'Enter mail',
 
 
 
