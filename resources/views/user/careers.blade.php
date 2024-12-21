@@ -8,7 +8,7 @@
                 <div class="banner-area">
                     <div class="rts-hosting-banner rts-hosting-banner__content w-530 contact__banner">
                         <h4 class="text-white banner-title">
-                            Careers
+                            @lang('messages.Careers')
                         </h4>
                     </div>
                 </div>
@@ -20,39 +20,38 @@
     <!-- CONTACT START -->
     <section class="rts-contact-form pt--120 pb--120" style="background-color: #f4f4f4;">
         <div class="container">
-           
+
             <div class="row gy-30 justify-content-center">
                 <div class="col-xl-6 col-lg-4 col-md-10">
                     <div class="contact-form">
-                       
+
                                 <img src="https://www.alhenzablaw.com/webassets/images/book/A7404203%20copy.jpg" alt="">
-                           
+
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-8 offset-xl-1 col-md-10">
                     <div class="form">
-                        <h5>If you didn’t find a suitable position available you can still submit your CV to a desired position using the form below</h5>
+                        <h5>@lang('messages.Careers_form_para')</h5>
                         <form class="form__content" method="post" action="https://html.themewant.com/hostie/mailer.php">
                             <div class="form__control">
-                                <input type="text" class="input-form" name="name" id="name" placeholder="what is your name?" required>
-                                <input type="email" class="input-form" name="email" id="email" placeholder="Email Address" required>
+                                <input type="text" class="input-form" name="name" id="name" placeholder="@lang('messages.career_name_placeholder')" required>
+                                <input type="email" class="input-form" name="email" id="email" placeholder="@lang('messages.career_email_placeholder')" required>
                             </div>
                             <div class="form__control">
-                                <input type="text" class="input-form" name="phone" id="phone" placeholder="Phone Number" required>
-                               <input type="text" class="input-form" name="phone" id="phone" placeholder="Position Apply" required>
+                                <input type="text" class="input-form" name="phone" id="phone" placeholder="@lang('messages.career_phno_placeholder')" required>
+                               <input type="text" class="input-form" name="phone" id="phone" placeholder="@lang('messages.career_position_placeholder')" required>
                             </div>
 
                             <div class="form__control">
                                 <input type="file" class="input-form" name="" id="" placeholder="" required>
-                               
+
                             </div>
-                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Cover Letter*" required></textarea>
+                            <textarea name="message" id="message" cols="30" rows="10" placeholder="@lang('messages.career_coverletter_placeholder')" required></textarea>
                             <input type="checkbox" name="checkbox" id="checkbox">
                             <label for="checkbox">
-                                By submitting your information you provide written consent
-                                to hostie and its family of brands contacting you.
+                            @lang('messages.career_appln_agreement_terms')
                             </label>
-                            <button type="submit" class="submit__btn">Submit Now</button>
+                            <button type="submit" class="submit__btn">@lang('messages.Submit_Now')</button>
                         </form>
                     </div>
                 </div>

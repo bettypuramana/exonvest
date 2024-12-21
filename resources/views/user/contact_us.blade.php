@@ -8,7 +8,7 @@
                 <div class="banner-area">
                     <div class="rts-hosting-banner rts-hosting-banner__content w-530 contact__banner">
                         <h4 class="text-white banner-title">
-                            Contact Us
+                            @lang('messages.contact')
                         </h4>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                                 <i class="fa-thin fa-map-location-dot"></i>
                             </div>
                             <div class="content w-220">
-                                <h5 class="info mb-0">11th Floor, Al Reem Tower, Westbay, Doha</h5>
+                                <h5 class="info mb-0">@lang('messages.Contactus_location_card')</h5>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                             </div>
                             <div class="content w-220">
                                 <h5 class="info mb-0">
-                                   Sunday To Thursday 8:30 AM To 5:00 PM
+                                @lang('messages.Contactus_time_card')
                                 </h5>
                             </div>
                         </div>
@@ -92,14 +92,14 @@
             <div class="row gy-30 justify-content-center">
                 <div class="col-xl-8 col-lg-8 col-md-8">
                     <div class="form">
-                        <h2 class="text-center">Send a message</h2>
+                        <h2 class="text-center">@lang('messages.Contactus_message_head')</h2>
                         <form class="form__content" method="post" action="https://html.themewant.com/hostie/mailer.php">
                             <div class="form__control">
-                                <input type="text" class="input-form" name="name" id="name" placeholder="what is your name?" required>
-                                <input type="email" class="input-form" name="email" id="email" placeholder="Email Address" required>
+                                <input type="text" class="input-form" name="name" id="name" placeholder="@lang('messages.Contactus_name_placeholder')" required>
+                                <input type="email" class="input-form" name="email" id="email" placeholder="@lang('messages.Contactus_email_placeholder')" required>
                             </div>
                             <div class="form__control">
-                                <input type="text" class="input-form" name="phone" id="phone" placeholder="Phone Number" required>
+                                <input type="text" class="input-form" name="phone" id="phone" placeholder="@lang('messages.Contactus_phno_placeholder')" required>
                                 <!-- <select name="select" id="select" class="input-form">
                                     <option value="1">Select a state</option>
                                     <option value="Bangladesh">Bangladesh</option>
@@ -110,13 +110,12 @@
                                 </select> -->
                             </div>
 
-                            <textarea name="message" id="message" cols="30" rows="10" placeholder="A brief description about your consultation" required></textarea>
+                            <textarea name="message" id="message" cols="30" rows="10" placeholder="@lang('messages.Contactus_desc_placeholder')" required></textarea>
                             <input type="checkbox" name="checkbox" id="checkbox">
                             <label for="checkbox">
-                                By submitting your information you provide written consent
-                                to hostie and its family of brands contacting you.
+                            @lang('messages.Contactus_appln_agreement_terms')
                             </label>
-                            <button type="submit" class="submit__btn">Submit Now</button>
+                            <button type="submit" class="submit__btn">@lang('messages.Contactus_Submit_Now')</button>
                         </form>
                     </div>
                 </div>
@@ -133,5 +132,5 @@
         </div>
     </section>
     <!-- CONTACT MAP END -->
-	
+
 	@endsection
