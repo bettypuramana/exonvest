@@ -35,7 +35,7 @@
                                  <tr>
                                     <th style="width: 2%">No</th>
                                     <th style="width: 30%">Category</th>
-                                    <th>Image</th>
+                                    <!-- <th>Image</th> -->
                                     <th>Action</th>
                                  </tr>
                               </thead>
@@ -48,7 +48,7 @@
                                  <tr>
                                     <td>{{$i}}</td>
                                     <td>{{$row->category_en}}/{{$row->category_ar}}</td>
-                                    <td><img style="width:60px;" src="{{ asset('uploads/category/'.$row->image) }}"></td>
+                                    <!-- <td><img style="width:60px;" src="{{ asset('uploads/category/'.$row->image) }}"></td> -->
                                     <td class="project_progress"><a href="{{ route('delete_category', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a></td>
                                  </tr>
                                 @php

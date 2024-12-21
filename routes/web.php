@@ -60,5 +60,24 @@ Route::get('/export', [App\Http\Controllers\Admin\NewsletterController::class, '
 
 /********* blog */
 Route::get('/admin/blog', [App\Http\Controllers\Admin\BlogController::class, 'index'])->name('admin.blog');
+Route::get('/blog_add', [App\Http\Controllers\Admin\BlogController::class, 'blog_add'])->name('admin.blog_add');
+Route::post('/store_blog', [App\Http\Controllers\Admin\BlogController::class, 'store'])->name('store_blog');
+Route::get('/edit_blog/{id}', [App\Http\Controllers\Admin\BlogController::class, 'edit'])->name('edit_blog');
+Route::post('/update_blog/{id}', [App\Http\Controllers\Admin\BlogController::class, 'update'])->name('update_blog');
+Route::get('/delete_blog/{id}', [App\Http\Controllers\Admin\BlogController::class, 'destroy'])->name('delete_blog');
+
+/******* Tag */
+Route::get('/tag', [App\Http\Controllers\Admin\TagController::class, 'index'])->name('admin.tag');
+Route::get('/tag_add', [App\Http\Controllers\Admin\TagController::class, 'tag_add'])->name('admin.tag_add');
+Route::post('/store_tag', [App\Http\Controllers\Admin\TagController::class, 'store'])->name('store_tag');
+Route::get('/delete_tag/{id}', [App\Http\Controllers\Admin\TagController::class, 'destroy'])->name('delete_tag');
+
+/******** Testimonials */
+Route::get('/admin/testimonial', [App\Http\Controllers\Admin\TestimonialController::class, 'index'])->name('admin.testimonial');
+Route::get('/testimonial_add', [App\Http\Controllers\Admin\TestimonialController::class, 'testimonial_add'])->name('admin.testimonial_add');
+Route::post('/store_testimonial', [App\Http\Controllers\Admin\TestimonialController::class, 'store'])->name('store_testimonial');
+Route::get('/edit_testimonial/{id}', [App\Http\Controllers\Admin\TestimonialController::class, 'edit'])->name('edit_testimonial');
+Route::post('/update_testimonial/{id}', [App\Http\Controllers\Admin\TestimonialController::class, 'update'])->name('update_testimonial');
+Route::get('/delete_testimonial/{id}', [App\Http\Controllers\Admin\TestimonialController::class, 'destroy'])->name('delete_testimonial');
 
 Auth::routes();
