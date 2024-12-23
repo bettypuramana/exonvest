@@ -88,7 +88,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#testi" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-newspaper-o green_color"></i> <span>Testimonial</span></a>
+                            <a href="#testi" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cubes blue2_color"></i> <span>Testimonial</span></a>
                             <ul class="collapse list-unstyled" id="testi">
                             <li><a href="{{route('admin.testimonial_add')}}">> <span>Add</span></a></li>
                             <li><a href="{{route('admin.testimonial')}}">> <span>List</span></a></li>
