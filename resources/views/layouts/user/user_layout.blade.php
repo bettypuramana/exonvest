@@ -104,10 +104,12 @@
 				<div class="col-lg-5">
 					<div class="cta-image rts-footer__widget footer__widget">
 						<form action="#" class="newsletter mx-40">
-                            <input type="email" class="home-one" name="email" placeholder="@lang('messages.Enter_mail')" required>
+                            <input type="email" class="home-one" name="newsletter_email" id="newsletter_email" placeholder="@lang('messages.Enter_mail')" required>
                             <span class="icon"><i class="fa-regular fa-envelope-open"></i></span>
-                            <button type="submit" class="view__btn" aria-label="Submit">@lang('messages.cta_btn')</button>
+
+                            <button type="submit" class="view__btn" aria-label="Submit" onclick="insertNewsletter()">@lang('messages.cta_btn')</button>
                         </form>
+                        <p id="newsletter_response"></p>
 					</div>
 				</div>
             </div>
@@ -250,7 +252,57 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C89scichPD02hX1v7vAxqUQ0WRs94tn+4Z9YpqpgqT6k5D8ayGVRApAHm6ktPBzUg"
  crossorigin="anonymous"></script>
+<script>
+function insertNewsletter(){
 
+event.preventDefault()
+var email=$("#newsletter_email").val();
+var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(email==""){
+        document.getElementById("newsletter_response").className = "text-danger";
+        document.getElementById("newsletter_response").innerHTML  = 'This field is required';
+    }else if(!emailRegex.test(email)) {
+    document.getElementById("newsletter_response").className = "text-danger";
+    document.getElementById("newsletter_response").innerHTML = 'Please enter a valid email address';
+    }else{
+        $.ajax({
+                url: "{{route('user.insertnewsletter')}}",
+                type: "POST",
+                data: {
+                        "_token": "{{ csrf_token() }}",
+                        email: email,
+                    },
+                    dataType: 'json',
+                    success: function(res)
+                        {
+                            if(res['status']==true){
+                                document.getElementById("newsletter_response").className = "text-success";
+                                document.getElementById("newsletter_response").innerHTML  = res['message'];
+
+                            }else if(res['status']==false){
+                                document.getElementById("newsletter_response").className = "text-danger";
+                                document.getElementById("newsletter_response").innerHTML  = res['message'];
+                            }
+
+                        },
+                        error: function(e)
+                        {
+                        //    loader_off();
+                        }
+                });
+            }
+}
+
+</script>
+<script>
+
+const emailInput = document.getElementById("newsletter_email");
+const responseElement = document.getElementById("newsletter_response");
+
+emailInput.addEventListener("input", function () {
+    responseElement.textContent = "";
+});
+</script>
  @yield('js')
 </body>
 </html>

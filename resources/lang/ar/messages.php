@@ -106,7 +106,7 @@ return [
                                 إلى Hostie وعائلة العلامات التجارية التي تتصل بك.',
 'Contactus_Submit_Now'=>'أرسل الآن',
 'Enter_mail'=>'أدخل البريد',
-
+'all_categories'=>'جميع الفئات',
 
 
 
