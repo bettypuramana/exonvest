@@ -37,7 +37,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <!-- <div class="col-sm-6">
                             <div class="form-group mb-3">
                                 <label class="mb-2">Description (English)</label>
                                 <textarea class="form-control" name="description_en" id="description_en" placeholder="Description">{{ old('description_en') }}</textarea>
@@ -64,7 +64,7 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
                         
                     </div>
                     <div class="form-group mb-3">

@@ -4,8 +4,8 @@
         <div class="col-md-12">
             <div class="page_title">
                 <div class="d-flex justify-content-between">
-                    <h2>Blog</h2>
-                    <a href="{{route('admin.blog_add')}}" class="btn cur-p btn-warning">Add</a>
+                    <h2>Tag</h2>
+                    <a href="{{route('admin.tag_add')}}" class="btn cur-p btn-warning">Add</a>
                 </div>
             </div>
 
@@ -33,10 +33,8 @@
                            <table class="table table-striped projects">
                               <thead class="thead-dark">
                                  <tr>
-                                    <th style="width: 2%">No</th>
-                                    <th style="width: 30%">Title</th>
-                                    <th style="width: 30%">Date</th>
-                                    <th>Image</th>
+                                    <th >No</th>
+                                    <th >Title</th>
                                     <th>Action</th>
                                  </tr>
                               </thead>
@@ -44,17 +42,12 @@
                                 @php
                                     $i=1;
                                     @endphp
-                                    @if(!empty($blog))
-                                    @foreach($blog as $row)
+                                    @if(!empty($tag))
+                                    @foreach($tag as $row)
                                  <tr>
                                     <td>{{$i}}</td>
-                                    <td>{{$row->title_en}}/{{$row->title_ar}}</td>
-                                    <td>{{$row->date}}</td>
-                                    <td><img style="width:60px;" src="{{ asset('uploads/blog/'.$row->main_image) }}"></td>
-                                    <td class="project_progress">
-                                       <a href="{{ route('edit_blog', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to edit this record?')" class="fa fa-edit text-warning"></a> &nbsp;&nbsp;&nbsp;
-                                       <a href="{{ route('delete_blog', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a>
-                                    </td>
+                                    <td>{{$row->name_en}}/{{$row->name_ar}}</td>
+                                    <td class="project_progress"><a href="{{ route('delete_tag', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a></td>
                                  </tr>
                                 @php
                                     $i++;
