@@ -33,6 +33,7 @@ Route::get('/careers', [App\Http\Controllers\User\HomeController::class, 'career
 
 Route::post('/submit-contact_us', [App\Http\Controllers\User\HomeController::class, 'submit_contact_us'])->name('user.submit_contact_us');
 Route::post('/submit-careers', [App\Http\Controllers\User\HomeController::class, 'submit_careers'])->name('user.submit_careers');
+Route::post('/insert-newsletter', [App\Http\Controllers\User\HomeController::class, 'insertnewsletter'])->name('user.insertnewsletter');
 
 /********* dashboard */
 Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
