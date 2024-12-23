@@ -36,7 +36,6 @@
                                     <th style="width: 30%">Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>State</th>
                                     <th>Description</th>
                                     <th>Action</th>
                                  </tr>
@@ -52,14 +51,13 @@
                                     <td>{{$row->name}}</td>
                                     <td>{{$row->email}}</td>
                                     <td>{{$row->phone}}</td>
-                                    <td>{{$row->state}}</td>
                                     <td>{{$row->description}}</td>
                                     <td class="project_progress"><a href="{{ route('delete_contact', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a></td>
                                  </tr>
                                 @php
                                     $i++;
                                 @endphp
-                                @endforeach                           
+                                @endforeach
                                 @endif
                               </tbody>
                            </table>
