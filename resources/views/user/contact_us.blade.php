@@ -93,21 +93,16 @@
                 <div class="col-xl-8 col-lg-8 col-md-8">
                     <div class="form">
                         <h2 class="text-center">@lang('messages.Contactus_message_head')</h2>
-                        <form class="form__content" method="post" action="https://html.themewant.com/hostie/mailer.php">
+                        <form class="form__content" method="post" id="contact-from">
+                            @csrf
+                            <p class="text-danger" id="input_error"></p>
                             <div class="form__control">
                                 <input type="text" class="input-form" name="name" id="name" placeholder="@lang('messages.Contactus_name_placeholder')" required>
                                 <input type="email" class="input-form" name="email" id="email" placeholder="@lang('messages.Contactus_email_placeholder')" required>
                             </div>
                             <div class="form__control">
-                                <input type="text" class="input-form" name="phone" id="phone" placeholder="@lang('messages.Contactus_phno_placeholder')" required>
-                                <!-- <select name="select" id="select" class="input-form">
-                                    <option value="1">Select a state</option>
-                                    <option value="Bangladesh">Bangladesh</option>
-                                    <option value="India">India</option>
-                                    <option value="Pakistan">Pakistan</option>
-                                    <option value="Nepal">Nepal</option>
-                                    <option value="Maldives">Maldives</option>
-                                </select> -->
+                                <input type="number" class="input-form" name="phone" id="phone" placeholder="@lang('messages.Contactus_phno_placeholder')" required>
+
                             </div>
 
                             <textarea name="message" id="message" cols="30" rows="10" placeholder="@lang('messages.Contactus_desc_placeholder')" required></textarea>
@@ -115,7 +110,8 @@
                             <label for="checkbox">
                             @lang('messages.Contactus_appln_agreement_terms')
                             </label>
-                            <button type="submit" class="submit__btn">@lang('messages.Contactus_Submit_Now')</button>
+                            <p class="text-danger" id="checkbox_submit_error"></p>
+                            <button type="submit" class="submit__btn" onclick="submitContactUs();">@lang('messages.Contactus_Submit_Now')</button>
                         </form>
                     </div>
                 </div>
@@ -134,3 +130,57 @@
     <!-- CONTACT MAP END -->
 
 	@endsection
+    @section('js')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function submitContactUs(){
+			event.preventDefault();
+
+        var name=document.getElementById('name').value;
+        var email=document.getElementById('email').value;
+        var phone=document.getElementById('phone').value;
+        var message=document.getElementById('message').value;
+        var checkbox_submit=document.getElementById('checkbox');
+			if(name==""){
+
+            document.getElementById("input_error").innerHTML  = 'Please enter your name';
+            }else if(email==""){
+                document.getElementById("input_error").innerHTML  = 'Please enter your Email';
+            }else if(phone==""){
+                document.getElementById("input_error").innerHTML  = 'Please enter your Phone';
+            }else if(message==""){
+                document.getElementById("input_error").innerHTML  = 'Please enter Cover Letter';
+            }else if(!checkbox_submit.checked){
+                document.getElementById("checkbox_submit_error").innerHTML  = 'You must agree to the terms and conditions.';
+            }else{
+			var formElement = document.getElementById("contact-from");
+            var formData = new FormData(formElement);
+			$.ajax({
+            type: "POST",
+            url:  "{{route('user.submit_contact_us')}}", // Replace with your API endpoint or server route
+            data: formData,
+            processData: false, //add this
+            contentType: false, //and this
+            success: function (res) {
+								if(res['status']==true){
+                                    swal({ title: 'Success!',text: res['message'], icon: 'success'});
+									swal({ title: 'Success!',text: res['message'], icon: 'success'}).then((result) => {
+                                        if (result==true) {
+                                            location.reload();
+                                        }
+                                    });
+
+                                }
+								else if(res['status']==false){
+                                    swal({ title: 'Fail!',text: res['message'], icon: 'error'});
+                                }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                // Handle errors, if any
+            }
+        });
+
+		}
+	}
+    </script>
+    	@endsection
