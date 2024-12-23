@@ -25,9 +25,9 @@
                             <img src="{{ asset('uploads/blog/'.$blog->main_image) }}" alt="blog post">
                         </div>
                         <div class="blog-details__article-meta mt--40">
-                            <a href="#"><span><i class="fa-light fa-user"></i></span>Zayed Khan</a>
+                            <!-- <a href="#"><span><i class="fa-light fa-user"></i></span>Zayed Khan</a> -->
                             <span><span><i class="fa-light fa-clock"></i></span>{{ date('d M, Y', strtotime($blog->date)) }}</span>
-                            <a href="#"><span><i class="fa-sharp fa-light fa-tags"></i></span>Hosting Feature</a>
+                            <!-- <a href="#"><span><i class="fa-sharp fa-light fa-tags"></i></span>Hosting Feature</a> -->
                         </div>
                         <h3 class="blog-title">{{$blog->title}}</h3>
                         <p>{!!$blog->description!!}</p>
@@ -87,7 +87,7 @@
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facere architecto obcaecati quam temporibus aut sunt, perferendis mollitia nisi, vel hic nostrum? Numquam eos autem vel rem minima sint natus, voluptatem voluptatum quia nulla fugiat reprehenderit porro, harum fuga? Neque explicabo voluptatem expedita consectetur in, sunt nisi non id doloremque.</p> -->
                     </article>
-                    <div class="blog-info">
+                    <!-- <div class="blog-info">
                         <div class="blog-share">
                             <div class="share">Share:</div>
                             <div class="social__media--list">
@@ -98,7 +98,7 @@
                                 <a href="#" class="media"><i class="fa-brands fa-behance"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-lg-4">
                     <div class="rts-sidebar">
@@ -107,40 +107,27 @@
                         <div class="rts-single-widget recentpost-widget">
                             <h4 class="widget-title">Recent Post</h4>
                             <div class="recent-posts">
-                                <div class="single-post">
-                                    <div class="thumb">
-                                        <img src="{{asset('assets/images/blog/blog-recent-1.png')}}" alt="" height="85" width="85">
+                                @if(!empty($recent))
+                                @foreach($recent as $row)
+                                    <div class="single-post">
+                                        <div class="thumb">
+                                            <img src="{{ asset('uploads/blog/'.$row->main_image) }}" alt="" height="85" width="85">
+                                        </div>
+                                        <div class="meta">
+                                            <span class="published"><i class="fa-regular fa-clock"></i> {{ date('d M, Y', strtotime($row->date)) }}</span>
+                                            <h6 class="title"><a href="{{route('user.blog_detail', ['id' =>$row->id,'cate_slug'=>$row->blog_slug])}}">{{$row->title}}</a></h6>
+                                        </div>
                                     </div>
-                                    <div class="meta">
-                                        <span class="published"><i class="fa-regular fa-clock"></i> 15 Jan, 2023</span>
-                                        <h6 class="title"><a href="#">We would love to share a similar experience</a></h6>
-                                    </div>
-                                </div>
-                                <div class="single-post">
-                                    <div class="thumb">
-                                        <img src="{{asset('assets/images/blog/blog-recent-2.png')}}" alt="" height="85" width="85">
-                                    </div>
-                                    <div class="meta">
-                                        <span class="published"><i class="fa-regular fa-clock"></i> 15 Jan, 2023</span>
-                                        <h6 class="title"><a href="#">We would love to share a similar experience</a></h6>
-                                    </div>
-                                </div>
-                                <div class="single-post">
-                                    <div class="thumb">
-                                        <img src="{{asset('assets/images/blog/blog-recent-3.png')}}" alt="" height="85" width="85">
-                                    </div>
-                                    <div class="meta">
-                                        <span class="published"><i class="fa-regular fa-clock"></i> 15 Jan, 2023</span>
-                                        <h6 class="title"><a href="#">We would love to share a similar experience</a></h6>
-                                    </div>
-                                </div>
+                                @endforeach                           
+                                @endif
                             </div>
+                            
                         </div>
                         <!-- single widget end -->
 
 
                         <!-- single widget start -->
-                        <div class="rts-single-widget gallery-widget">
+                        <!-- <div class="rts-single-widget gallery-widget">
                             <h4 class="widget-title">Gallery Post</h4>
                             <div class="gallery-posts">
                                 <a href="blog-details.html" class="thumb">
@@ -162,7 +149,7 @@
                                     <img src="{{asset('assets/images/blog/gallery-post-6.png')}}" height="95" width="95" alt="">
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- single widget end -->
 
                         <!-- single widget start -->
@@ -170,15 +157,19 @@
                             <h4 class="widget-title">popular tags</h4>
                             <div class="popular-tags">
                                 <ul class="list-unstyled tags-style">
-                                    <li class="tags"><a href="#">service</a></li>
-                                    <li class="tags"><a href="#">Business</a></li>
+                                @if(!empty($tags))
+                                @foreach($tags as $row)
+                                    <li class="tags"><a href="#">{{$row->name}}</a></li>
+                                @endforeach                           
+                                @endif
+                                    <!-- <li class="tags"><a href="#">Business</a></li>
                                     <li class="tags"><a href="#">Growth</a></li>
                                     <li class="tags"><a href="#">Kitchen</a></li>
                                     <li class="tags"><a href="#">Interior Design</a></li>
                                     <li class="tags"><a href="#">Solution</a></li>
                                     <li class="tags"><a href="#">Urban</a></li>
                                     <li class="tags"><a href="#">Buildings</a></li>
-                                    <li class="tags"><a href="#">Architecture</a></li>
+                                    <li class="tags"><a href="#">Architecture</a></li> -->
                                 </ul>
                             </div>
                         </div>
