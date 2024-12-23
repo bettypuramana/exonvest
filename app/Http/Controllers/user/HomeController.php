@@ -4,6 +4,8 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Blog;
+use App\Models\Tag;
 
 class HomeController extends Controller
 {
@@ -21,7 +23,9 @@ class HomeController extends Controller
     }
     public function blog()
     {
-        return view('user.blog');
+        $blog=Blog::orderBy('id', 'DESC')->get();
+        $tags=Tag::orderBy('id', 'DESC')->get();
+        return view('user.blog',compact('blog','tags'));
     }
     public function blog_detail()
     {
