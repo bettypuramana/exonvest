@@ -109,6 +109,7 @@ return [
 'Contactus_Submit_Now'=>'Submit Now',
 
 'Enter_mail'=>'Enter mail',
+'all_categories'=>'All Categories',
 
 
 

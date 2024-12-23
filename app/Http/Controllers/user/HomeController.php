@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
 use App\Models\Career;
+use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Newsletter;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -81,10 +84,41 @@ class HomeController extends Controller
     }
         public function brands()
     {
-        return view('user.brands');
+        $locale = app()->getLocale();
+
+        if($locale=='ar'){
+            $categories=Category::orderBy('id', 'DESC')->select('id','categories.category_ar as category')->get();
+        }else{
+            $categories=Category::orderBy('id', 'DESC')->select('id','categories.category_en as category')->get();
+        }
+        $brands = Brand::orderBy('brands.id', 'DESC')->get();
+        return view('user.brands',compact('categories','brands'));
     }
         public function community()
     {
         return view('user.community');
+    }
+    public function insertnewsletter(Request $request)
+    {
+
+        $email = $request->input('email');
+
+    // Check if the email already exists in the Newsletter table
+    $emailExists = Newsletter::where('email', $email)->exists();
+
+    if ($emailExists) {
+        return response()->json(['status' => false, 'message' => 'Email already exists']);
+    }
+
+    // Proceed to insert the new email
+    $insert = new Newsletter;
+    $insert->email = $email;
+    $save = $insert->save();
+
+    if ($save) {
+        return response()->json(['status' => true, 'message' => 'Submitted successfully']);
+    } else {
+        return response()->json(['status' => false, 'message' => 'Something went wrong']);
+    }
     }
 }
