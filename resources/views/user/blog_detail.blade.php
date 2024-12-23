@@ -22,15 +22,16 @@
                 <div class="col-lg-8">
                     <article class="blog-details">
                         <div class="blog-details__featured-image">
-                            <img src="{{asset('assets/images/blog/blog-post-details.jpg')}}" alt="blog post">
+                            <img src="{{ asset('uploads/blog/'.$blog->main_image) }}" alt="blog post">
                         </div>
                         <div class="blog-details__article-meta mt--40">
                             <a href="#"><span><i class="fa-light fa-user"></i></span>Zayed Khan</a>
-                            <span><span><i class="fa-light fa-clock"></i></span>20 Jan 2024, 10:30 pm</span>
+                            <span><span><i class="fa-light fa-clock"></i></span>{{ date('d M, Y', strtotime($blog->date)) }}</span>
                             <a href="#"><span><i class="fa-sharp fa-light fa-tags"></i></span>Hosting Feature</a>
                         </div>
-                        <h3 class="blog-title">Building smart business solution for you</h3>
-                        <p>Collaboratively pontificate bleeding edge resources with inexpensive methodologies globally initiate multidisciplinary compatible architectures pidiously repurpose leading edge growth strategies with just in time web readiness communicate timely meta services </p>
+                        <h3 class="blog-title">{{$blog->title}}</h3>
+                        <p>{!!$blog->description!!}</p>
+                        <!-- <p>Collaboratively pontificate bleeding edge resources with inexpensive methodologies globally initiate multidisciplinary compatible architectures pidiously repurpose leading edge growth strategies with just in time web readiness communicate timely meta services </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolorum officia iure, culpa nesciunt omnis voluptas libero hic dicta vitae nulla quisquam modi deserunt, voluptatibus reprehenderit non ipsum exercitationem maxime cum! Veniam quaerat, incidunt odio sunt voluptatum nostrum quod dolorem et iusto magni, laborum ut a atque voluptatibus voluptates corrupti consequatur? Neque tempora totam blanditiis doloribus omnis ducimus consequuntur quod ipsum repellat iure, in molestiae magnam quia! Ullam natus illo, voluptates nemo fuga laboriosam distinctio nisi consequuntur quia aut repudiandae delectus cumque officia ab minima suscipit voluptate ea velit hic sint quas dignissimos autem qui earum! Incidunt iure inventore qui.</p>
                         <blockquote class="rts-blockquote">
                             <h4>Building smart business solution for you</h4>
@@ -84,7 +85,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facere architecto obcaecati quam temporibus aut sunt, perferendis mollitia nisi, vel hic nostrum? Numquam eos autem vel rem minima sint natus, voluptatem voluptatum quia nulla fugiat reprehenderit porro, harum fuga? Neque explicabo voluptatem expedita consectetur in, sunt nisi non id doloremque.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facere architecto obcaecati quam temporibus aut sunt, perferendis mollitia nisi, vel hic nostrum? Numquam eos autem vel rem minima sint natus, voluptatem voluptatum quia nulla fugiat reprehenderit porro, harum fuga? Neque explicabo voluptatem expedita consectetur in, sunt nisi non id doloremque.</p> -->
                     </article>
                     <div class="blog-info">
                         <div class="blog-share">

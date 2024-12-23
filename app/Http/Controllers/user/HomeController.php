@@ -46,13 +46,31 @@ class HomeController extends Controller
     }
     public function blog()
     {
-        $blog=Blog::orderBy('id', 'DESC')->get();
+        $locale = app()->getLocale();
+
+        if($locale=='ar'){
+            $blog=Blog::orderBy('id', 'DESC')->select('id','title_ar as title','main_image','date')->get();
+        }else{
+            $blog=Blog::orderBy('id', 'DESC')->select('id','title_en as title','main_image','date')->get();
+        }
+
         $tags=Tag::orderBy('id', 'DESC')->get();
         return view('user.blog',compact('blog','tags'));
     }
-    public function blog_detail()
+    public function blog_detail(Request $request,$id)
     {
-        return view('user.blog_detail');
+        $locale = app()->getLocale();
+
+        if ($locale == 'ar') {
+            $blog = Blog::where('id', $id)
+                ->select('id', 'title_ar as title', 'main_image', 'date', 'description_ar as description')
+                ->first(); // Use first() to get a single record
+        } else {
+            $blog = Blog::where('id', $id)
+                ->select('id', 'title_en as title', 'main_image', 'date', 'description_en as description')
+                ->first(); // Use first() to get a single record
+        }
+        return view('user.blog_detail',compact('blog'));
     }
     public function careers()
     {
