@@ -36,7 +36,7 @@
     </style>
 </head>
 
-<body>
+<body class="{{ request()->segment(1) == 'arabic' ? 'arclass' : 'enclass' }}">
 
     <!-- HEADER AREA -->
     <header class="rts-header style-one header__default">
