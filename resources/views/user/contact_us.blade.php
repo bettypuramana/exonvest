@@ -97,19 +97,19 @@
                             @csrf
                             <p class="text-danger" id="input_error"></p>
                             <div class="form__control">
-                                <input type="text" class="input-form" name="name" id="name" placeholder="@lang('messages.Contactus_name_placeholder')" required>
-                                <input type="email" class="input-form" name="email" id="email" placeholder="@lang('messages.Contactus_email_placeholder')" required>
+                                <input type="text" class="input-form" name="name" id="name" placeholder="@lang('messages.career_name_placeholder')" required>
+                                <input type="email" class="input-form" name="email" id="email" placeholder="@lang('messages.career_email_placeholder')" required>
                             </div>
                             <div class="form__control">
-                                <input type="number" class="input-form" name="phone" id="phone" placeholder="@lang('messages.Contactus_phno_placeholder')" required>
+                                <input type="number" class="input-form" name="phone" id="phone" placeholder="@lang('messages.career_phno_placeholder')" required>
 
                             </div>
 
                             <textarea name="message" id="message" cols="30" rows="10" placeholder="@lang('messages.Contactus_desc_placeholder')" required></textarea>
-                            <input type="checkbox" name="checkbox" id="checkbox">
-                            <label for="checkbox">
-                            @lang('messages.Contactus_appln_agreement_terms')
-                            </label>
+                            <div class="ab-rtl">
+                                <label><input type="checkbox" name="checkbox" id="checkbox" >
+                                @lang('messages.career_appln_agreement_terms')</label>
+                            </div>
                             <p class="text-danger" id="checkbox_submit_error"></p>
                             <button type="submit" class="submit__btn" onclick="submitContactUs();">@lang('messages.Contactus_Submit_Now')</button>
                         </form>

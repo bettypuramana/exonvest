@@ -9595,59 +9595,6 @@ textarea:focus {
   border-color: var(--color-primary);
 }
 
-input[type=checkbox],
-input[type=radio] {
-  opacity: 0;
-  position: absolute;
-}
-input[type=checkbox] ~ label,
-input[type=radio] ~ label {
-  position: relative;
-  font-size: 12px;
-  line-height: 17px;
-  color: var(--color-body);
-  font-weight: 400;
-  padding-left: 25px;
-  cursor: pointer;
-}
-input[type=checkbox] ~ label::before,
-input[type=radio] ~ label::before {
-  content: " ";
-  position: absolute;
-  top: 5px;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  background-color: #5d5d7e;
-  border-radius: 2px;
-  transition: all 0.3s;
-  border-radius: 2px;
-}
-input[type=checkbox] ~ label::after,
-input[type=radio] ~ label::after {
-  content: " ";
-  position: absolute;
-  top: 16%;
-  left: 2px;
-  width: 10px;
-  height: 6px;
-  background-color: transparent;
-  border-bottom: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  border-radius: 2px;
-  transform: rotate(-45deg);
-  opacity: 0;
-  transition: all 0.3s;
-}
-input[type=checkbox]:checked ~ label::after,
-input[type=radio]:checked ~ label::after {
-  opacity: 1;
-}
-
-input:checked ~ .rn-check-box-label::before {
-  background: var(--color-primary) !important;
-}
-
 input[type=radio] ~ label::before {
   border-radius: 50%;
 }
@@ -24810,16 +24757,7 @@ header.heder-two .sub-dropdown .submenu.third-lvl.base {
     top: 12%;
   }
 }
-.rts-contact-form .form__content input[type=checkbox]:checked ~ label::after {
-  opacity: 1;
-}
-.rts-contact-form .form__content label {
-  margin-top: 30px;
-  font-size: 14px;
-  margin-bottom: 30px;
-  color: var(--color-secondary);
-  line-height: 24px;
-}
+
 .rts-contact-form .form__content .submit__btn {
   padding: 17px 35px;
   width: 100%;
@@ -29054,4 +28992,36 @@ font-size: 12px;}
 
 .filters-content .item:hover img {
  transform: scale(1.08);
+}
+.ab-rtl label input {
+    width: auto !important;
+    float: left;
+    margin-right: 1rem;
+}
+.ab-rtl {
+    display: flex;
+}
+.arclass .ab-rtl {
+    display: flex;
+}
+.arclass .ab-rtl label input {
+    width: auto !important;
+    float: right;
+    margin-left: 2rem;
+}
+.arclass .ab-rtl label input {
+    width: auto !important;
+    float: right;
+}
+.arclass  .rts-footer__widget--menu .widget--menu-j li i {
+    position: relative;
+    padding-left: 16px;padding-right:0px;
+    top: 5px;
+}
+.arclass  .rts-footer__widget--menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: right;
+    direction: rtl;
 }
