@@ -25,7 +25,7 @@ Route::get('/contact_us', [App\Http\Controllers\User\HomeController::class, 'con
 Route::get('/blog', [App\Http\Controllers\User\HomeController::class, 'blog'])->name('user.blog');
 Route::get('/brands', [App\Http\Controllers\User\HomeController::class, 'brands'])->name('user.brands');
 Route::get('/community', [App\Http\Controllers\User\HomeController::class, 'community'])->name('user.community');
-Route::get('/blog_detail/{id}', [App\Http\Controllers\User\HomeController::class, 'blog_detail'])->name('user.blog_detail');
+Route::get('/blogs/{id}/{cate_slug}', [App\Http\Controllers\User\HomeController::class, 'blog_detail'])->name('user.blog_detail');
 Route::get('/careers', [App\Http\Controllers\User\HomeController::class, 'careers'])->name('user.careers');
 
 

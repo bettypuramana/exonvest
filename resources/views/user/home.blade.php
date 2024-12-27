@@ -245,7 +245,7 @@
                                @lang('messages.blog_head')</h2>
                         </div>
                         <div class="rts-section-description">
-                           <a href="#about" class="view__btn" target="_blank">@lang('messages.blog_btn')<i class="fa fa-arrow-right"></i></a>
+                           <a href="{{url(empty(app()->getLocale())?'english'.'/'.'blog':request()->segment(1).'/'.'blog')}}" class="view__btn" target="_blank">@lang('messages.blog_btn')<i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -254,31 +254,34 @@
 			<div class="newblog rts-brand__wrapper pt-5 pb-5">
 				 <div class="rts-testimonial__slider testimonial__slider--first">
                         <div class="swiper-wrapper">
+                        @if(!empty($recent))
+                        @foreach($recent as $row)    
                             
-                            
-                       <div class="swiper-slide">
-							<div class="rts-blog__single">
-								<a href="##">
-									<img class="blog__thumb" src="{{asset('assets/images/blog/post-1.jpg')}}" alt="blog post thumb">
-								</a>
-								<div class="rts-blog__single--meta">
-									<div class="cat__date float-start text-left">
-										<a href="#" class="cat">@lang('messages.blog_Subtext1')</a>
-									</div>
-									<a href="##" class="title  pb-3">@lang('messages.blog_Headline1')</a>
-									<hr>
-									<div class="row">
-										<div class="col-lg-6 col-6 author text-start">
-											<span><i class="fa fa-user"></i></span> By Natasha
-										</div>
-										<div class="col-lg-6 col-6  author__content text-end">
-											 <span><i class="fa fa-calendar"></i></span> <span>August 25, 2024</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
+                            <div class="swiper-slide">
+                                <div class="rts-blog__single">
+                                    <a href="{{route('user.blog_detail', ['id' =>$row->id,'cate_slug'=>$row->blog_slug])}}">
+                                        <img class="blog__thumb" src="{{ asset('uploads/blog/'.$row->main_image) }}" alt="blog post thumb">
+                                    </a>
+                                    <div class="rts-blog__single--meta">
+                                        <div class="cat__date float-start text-left">
+                                            <!-- <a href="#" class="cat">@lang('messages.blog_Subtext1')</a> -->
+                                        </div>
+                                        <a href="{{route('user.blog_detail', ['id' =>$row->id,'cate_slug'=>$row->blog_slug])}}" class="title  pb-3">{{$row->title}}</a>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-6 author text-start">
+                                                <!-- <span><i class="fa fa-user"></i></span> By Natasha -->
+                                            </div>
+                                            <div class="col-lg-6 col-6  author__content text-end">
+                                                <span><i class="fa fa-calendar"></i></span> <span>{{ date('d M, Y', strtotime($row->date)) }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach                           
+                        @endif
+						<!-- <div class="swiper-slide">
 							<div class="rts-blog__single">
 								<a href="##">
 									<img class="blog__thumb" src="{{asset('assets/images/blog/post-2.jpg')}}" alt="blog post thumb">
@@ -321,7 +324,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					 <div class="rts-dot__button slider-center"></div>
 				</div>
@@ -347,22 +350,26 @@
                         <div class="rts-testimonial__slider testimonial-slider-two">
                         <div class="swiper-wrapper">
                             <!-- single testimonial -->
+                            @if(!empty($testimonial))
+                            @foreach($testimonial as $row)
                             <div class="swiper-slide">
                                 <div class="rts-testimonial__single">
                                     <div class="content">
-                                        <p>@lang('messages.Testimonials_Headline1')</p>
+                                        <p>{!! $row->description !!}</p>
                                     </div>
                                     <div class="author__meta">
                                         <div class="author__meta--details">
-                                            <a href="#">@lang('messages.Testimonials_Head')</a>
-                                            <span>@lang('messages.Testimonials_name')</span>
+                                            <a href="#">{{$row->name}}</a>
+                                            <span>{{$row->job}}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach                           
+                        @endif
                             <!-- single testimonial end -->
                             <!-- single testimonial -->
-                            <div class="swiper-slide">
+                            <!-- <div class="swiper-slide">
                                 <div class="rts-testimonial__single">
                                     <div class="content">
                                         <p>@lang('messages.Testimonials_Headline1')</p>
@@ -374,10 +381,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- single testimonial end -->
                             <!-- single testimonial -->
-                            <div class="swiper-slide">
+                            <!-- <div class="swiper-slide">
                                 <div class="rts-testimonial__single">
                                     <div class="content">
                                         <p>@lang('messages.Testimonials_Headline1')</p>
@@ -389,7 +396,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- single testimonial end -->
                             
                         </div>

@@ -10,13 +10,32 @@ use App\Models\Contact;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\Testimonial;
 use App\Models\Tag;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('user.home');
+        $locale = app()->getLocale();
+        if ($locale == 'ar') {
+            $testimonial=Testimonial::orderBy('id', 'DESC')
+                         ->select('id', 'title_en as title', 'name_ar as name','job_title_ar as job', 'description_ar as description')
+                         ->get();
+            $recent = Blog::orderBy('id', 'DESC')
+                ->select('id', 'title_ar as title', 'main_image', 'date','blog_slug')
+                ->take(3)
+                ->get();
+        } else {
+            $testimonial=Testimonial::orderBy('id', 'DESC')
+                         ->select('id', 'title_en as title', 'name_en as name','job_title_en as job', 'description_en as description')
+                         ->get();
+            $recent = Blog::orderBy('id', 'DESC')
+                ->select('id', 'title_en as title', 'main_image', 'date','blog_slug')
+                ->take(3)
+                ->get();
+        }
+        return view('user.home',compact('recent','testimonial'));
     }
     public function about_us()
     {
@@ -49,13 +68,12 @@ class HomeController extends Controller
         $locale = app()->getLocale();
 
         if($locale=='ar'){
-            $blog=Blog::orderBy('id', 'DESC')->select('id','title_ar as title','main_image','date')->get();
+            $blog=Blog::orderBy('id', 'DESC')->select('id','title_ar as title','main_image','date','blog_slug')->get();
         }else{
-            $blog=Blog::orderBy('id', 'DESC')->select('id','title_en as title','main_image','date')->get();
+            $blog=Blog::orderBy('id', 'DESC')->select('id','title_en as title','main_image','date','blog_slug')->get();
         }
 
-        $tags=Tag::orderBy('id', 'DESC')->get();
-        return view('user.blog',compact('blog','tags'));
+        return view('user.blog',compact('blog'));
     }
     public function blog_detail(Request $request,$id)
     {
@@ -63,14 +81,41 @@ class HomeController extends Controller
 
         if ($locale == 'ar') {
             $blog = Blog::where('id', $id)
-                ->select('id', 'title_ar as title', 'main_image', 'date', 'description_ar as description')
+                ->select('id', 'title_ar as title', 'main_image', 'date', 'description_ar as description', 'tag')
                 ->first(); // Use first() to get a single record
+
+            $recent = Blog::where('id', '!=', $id) // Exclude the current blog
+                ->orderBy('id', 'DESC')
+                ->select('id', 'title_ar as title', 'main_image', 'date','blog_slug')
+                ->take(3)
+                ->get();
         } else {
             $blog = Blog::where('id', $id)
-                ->select('id', 'title_en as title', 'main_image', 'date', 'description_en as description')
+                ->select('id', 'title_en as title', 'main_image', 'date', 'description_en as description', 'tag')
                 ->first(); // Use first() to get a single record
+            $recent = Blog::where('id', '!=', $id) // Exclude the current blog
+                ->orderBy('id', 'DESC')
+                ->select('id', 'title_en as title', 'main_image', 'date','blog_slug')
+                ->take(3)
+                ->get();
         }
-        return view('user.blog_detail',compact('blog'));
+        $tagIds = json_decode($blog->tag);
+
+        if (app()->getLocale() == 'ar') {
+            // Fetch tags with Arabic names
+            $tags = Tag::whereIn('id', $tagIds)
+                ->select('id', 'name_ar as name') // Use Arabic column
+                ->orderBy('id', 'DESC')
+                ->get();
+        } else {
+            // Fetch tags with English names
+            $tags = Tag::whereIn('id', $tagIds)
+                ->select('id', 'name_en as name') // Use English column
+                ->orderBy('id', 'DESC')
+                ->get();
+        }
+        
+        return view('user.blog_detail',compact('blog','recent','tags'));
     }
     public function careers()
     {
