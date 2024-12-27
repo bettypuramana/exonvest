@@ -94,8 +94,7 @@ return [
 'career_phno_placeholder'=>'Phone Number',
 'career_position_placeholder'=>'Position Apply',
 'career_coverletter_placeholder'=>'Cover Letter*',
-'career_appln_agreement_terms'=>'By submitting your information you provide written consent
-                                to hostie and its family of brands contacting you.',
+'career_appln_agreement_terms'=>'By submitting your information you provide written consent to Exonvest and its family of brands contacting you.',
 'Submit_Now'=>'Submit Now',
 'Contactus_location_card'=>'11th Floor, Al Reem Tower, Westbay, Doha',
 'Contactus_time_card'=>'Sunday To Thursday 8:30 AM To 5:00 PM',
