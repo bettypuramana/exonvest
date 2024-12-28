@@ -28597,10 +28597,12 @@ font-size: 12px;}
   border-radius: 50%;
 }
 
+
 .image-container img {
     width: auto;
-    height: 454px;
-    margin-left: 13rem;
+    height: 340px;
+    margin-left: 16rem;
+    border-radius: 10px;
 }
 
 
@@ -28686,11 +28688,11 @@ font-size: 12px;}
     animation-timing-function: cubic-bezier(.6, 0, .4, 1);
     animation-delay: 0.9s;
     position: absolute;
-    top: -33px;
-    right: 369px;
+    top: 0px;
+    right: 445px;
     background: #52a4bb;
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     opacity: 1;
     z-index: -4;
@@ -28702,11 +28704,11 @@ font-size: 12px;}
     animation-timing-function: cubic-bezier(.6, 0, .4, 1);
     animation-delay: 1.2s;
     position: absolute;
-    top: -56px;
-    right: 347px;
+    top: -16px;
+    right: 430px;
     background: #2a4363;
-    width: 490px;
-    height: 490px;
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
     opacity: 1;
     z-index: -5;
@@ -29024,4 +29026,8 @@ font-size: 12px;}
     list-style: none;
     float: right;
     direction: rtl;
+}
+.testimoniyalview{
+    height:50vh;
+    padding-top:10px;
 }
