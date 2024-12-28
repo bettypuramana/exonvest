@@ -87,7 +87,16 @@
                     <div class="rts-brand__wrapper pt-5 pb-5">
                         <div class="rts-brand__slider">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                            @if(!empty($brands))
+                                @foreach($brands as $row) 
+                                    <div class="swiper-slide">
+                                        <div class="rts-brand__slider--single">
+                                            <a href="#" aria-label="brand-link"><img width="153" height="148" src="{{ asset('uploads/brand/'.$row->image) }}" alt=""></a>
+                                        </div>
+                                    </div>
+                                @endforeach                           
+                            @endif
+                                <!-- <div class="swiper-slide">
                                     <div class="rts-brand__slider--single">
                                         <a href="#" aria-label="brand-link"><img src="{{asset('assets/images/brand/1.jpg')}}" alt=""></a>
                                     </div>
@@ -111,7 +120,7 @@
                                     <div class="rts-brand__slider--single">
                                         <a href="#" aria-label="brand-link"><img src="{{asset('assets/images/brand/5.jpg')}}" alt=""></a>
                                     </div>
-                                </div>
+                                </div> -->
                                 
                             </div>
                         </div>

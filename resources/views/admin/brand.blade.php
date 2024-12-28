@@ -51,7 +51,10 @@
                                     <td>{{$row->category_en}}/{{$row->category_ar}}</td>
                                     <td>{{$row->brand_en}}/{{$row->brand_ar}}</td>
                                     <td><img style="width:60px;" src="{{ asset('uploads/brand/'.$row->image) }}"></td>
-                                    <td class="project_progress"><a href="{{ route('delete_brand', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a></td>
+                                    <td class="project_progress">
+                                       <a href="{{ route('edit_brand', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to edit this record?')" class="fa fa-edit text-warning"></a> &nbsp;&nbsp;&nbsp;
+                                       <a href="{{ route('delete_brand', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a>
+                                    </td>
                                  </tr>
                                 @php
                                     $i++;

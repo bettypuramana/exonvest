@@ -26,6 +26,7 @@ Route::get('/blog', [App\Http\Controllers\User\HomeController::class, 'blog'])->
 Route::get('/brands', [App\Http\Controllers\User\HomeController::class, 'brands'])->name('user.brands');
 Route::get('/community', [App\Http\Controllers\User\HomeController::class, 'community'])->name('user.community');
 Route::get('/blogs/{id}/{cate_slug}', [App\Http\Controllers\User\HomeController::class, 'blog_detail'])->name('user.blog_detail');
+Route::get('/brand/{id}/{cate_slug}', [App\Http\Controllers\User\HomeController::class, 'brand_detail'])->name('user.brand_detail');
 Route::get('/careers', [App\Http\Controllers\User\HomeController::class, 'careers'])->name('user.careers');
 
 
@@ -54,6 +55,8 @@ Route::get('/admin/brand', [App\Http\Controllers\Admin\BrandController::class, '
 Route::get('/delete_brand/{id}', [App\Http\Controllers\Admin\BrandController::class, 'destroy'])->name('delete_brand');
 Route::get('/brand_add', [App\Http\Controllers\Admin\BrandController::class, 'brand_add'])->name('admin.brand_add');
 Route::post('/store_brand', [App\Http\Controllers\Admin\BrandController::class, 'store'])->name('store_brand');
+Route::get('/edit_brand/{id}', [App\Http\Controllers\Admin\BrandController::class, 'edit'])->name('edit_brand');
+Route::post('/update_brand/{id}', [App\Http\Controllers\Admin\BrandController::class, 'update'])->name('update_brand');
 
 /******* careers */
 Route::get('/career', [App\Http\Controllers\Admin\CareerController::class, 'index'])->name('admin.career');
