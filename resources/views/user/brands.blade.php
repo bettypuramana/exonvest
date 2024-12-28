@@ -38,7 +38,7 @@
         @if (!empty($brands))
         @foreach ($brands as $brand)
         <div class="col-md-2 col-sm-3 all col-4  allBrands grid{{$brand->category_id}} brandItemsForFilter-cattop">
-            <a href="/qa/en/brands/food/starbucks">
+            <a href="{{route('user.brand_detail' ,['id' =>$brand->id,'cate_slug'=>$brand->brand_slug])}}">
                 <div class="item">
                     <div class="brandItemsHiddenContentForFilter-cattop" style="display:none;">
                         Starbucks,112,114,115,116,117,118,119,120,121,124,125,126,21446</div>

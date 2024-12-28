@@ -35,7 +35,8 @@ class HomeController extends Controller
                 ->take(3)
                 ->get();
         }
-        return view('user.home',compact('recent','testimonial'));
+        $brands = Brand::orderBy('brands.id', 'DESC')->get();
+        return view('user.home',compact('recent','testimonial','brands'));
     }
     public function about_us()
     {
@@ -160,6 +161,37 @@ class HomeController extends Controller
         }
         $brands = Brand::orderBy('brands.id', 'DESC')->get();
         return view('user.brands',compact('categories','brands'));
+    }
+    public function brand_detail(Request $request,$id)
+    {
+        $locale = app()->getLocale();
+
+        if ($locale == 'ar') {
+            $brands = Brand::where('id', $id)
+                ->select('id', 'brand_ar as brand', 'description_ar as description', 'image','category_id')
+                ->first(); // Use first() to get a single record
+          
+        } else {
+            $brands = Brand::where('id', $id)
+                ->select('id', 'brand_en as brand', 'description_en as description', 'image','category_id')
+                ->first(); // Use first() to get a single record
+        }
+        $categoryIds = explode(',', $brands->category_id);  // Split category_id into an array
+
+        // Log the category IDs
+        \Log::info('Category IDs:', ['category_ids' => $categoryIds]);
+
+        // Fetch categories based on the IDs
+        if ($locale == 'ar') {
+            $categories = Category::whereIn('id', $categoryIds)->select('category_ar as category')->get();
+        } else {
+            $categories = Category::whereIn('id', $categoryIds)->select('category_en as category')->get();
+        }
+
+        // Log the categories retrieved (convert collection to array)
+        \Log::info('Categories:', ['categories' => $categories->toArray()]);
+
+         return view('user.brand_detail',compact('brands','categories'));
     }
         public function community()
     {
