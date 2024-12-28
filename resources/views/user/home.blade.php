@@ -1,7 +1,17 @@
 @extends('layouts.user.user_layout')
 @section('title', 'Exonvest || Home')
 @section('content')
- 
+ <style>
+     .rts-brand__slider--single img {
+    width: 150px; /* Set your desired width */
+    height: 150px; /* Set your desired height */
+    object-fit: cover; /* Ensures the image fits within the dimensions without distortion */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    display: block; /* Ensures no inline spacing issues */
+    margin: 0 auto; /* Centers the image horizontally */
+}
+
+ </style>
  <!-- HERO BANNER ONE -->
  <section id="home" class="rts-hero rts-hero__one banner-style-home-one">
         <div class="container">
@@ -9,7 +19,7 @@
             <div class="row align-items-end position-relative">
 				<div class="col-lg-6">
                     <div class="rts-hero__images position-relative">
-                    
+
 					</div>
                 </div>
                 <div class="col-lg-6">
@@ -21,31 +31,31 @@
                         <div class="rts-hero__content--group" data-sal="slide-down" data-sal-delay="500" data-sal-duration="800">
                             <a href="#about" class="primary__btn white__bg">@lang('messages.slider_btn')</a>
                         </div>
-                       
+
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="rts-hero__images position-relative">
-                    
+
 					</div>
                 </div>
             </div>
         </div>
     </section>
     <!-- HERO BANNER ONE END -->
-	
-	
+
+
     <!-- ABOUT US -->
     <div id="about" class="rts-about position-relative section__padding">
         <div class="container">
 		<h2 class="text-center main-head mb-3">@lang('messages.about_head') </h2>
             <div class="mt-3 row justify-content-center align-items-center">
-                
+
                 <div class="col-xl-7 col-lg-7">
                     <div class="rts-about__content bg-white">
                         <h3>@lang('messages.about_headding')</h3>
                         <p class="description mb-5" data-sal="slide-down" data-sal-delay="400" data-sal-duration="800">
-                           @lang('messages.about_Para') 
+                           @lang('messages.about_Para')
                         </p>
 						<div class="checkboxes mb-3">
     <div class="checkbox">
@@ -74,10 +84,10 @@
         <div class="rts-about-shape"></div>
     </div>
     <!-- ABOUT US END -->
-	
-	
-	
-	
+
+
+
+
 
     <!-- BRAND AREA -->
     <div id="brands" class="rts-brand rts-brand__bg--section ">
@@ -98,7 +108,7 @@
                             @endif
                                 <!-- <div class="swiper-slide">
                                     <div class="rts-brand__slider--single">
-                                        <a href="#" aria-label="brand-link"><img src="{{asset('assets/images/brand/1.jpg')}}" alt=""></a>
+                                        <a href="#" aria-label="brand-link"><img width="153" height="148" src="{{ asset('uploads/brand/'.$row->image) }}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
@@ -130,9 +140,9 @@
         </div>
     </div>
     <!-- BRAND AREA END-->
-	
-	
-	
+
+
+
 	<!-- SEARCH DOMAIN -->
     <div class=" rts-domain-finder section__padding">
         <div class="container">
@@ -174,7 +184,7 @@
                             <img class="blog__thumb" src="{{asset('assets/images/blog/1.jpg')}}" alt="blog post thumb">
                         </a>
                         <div class="rts-blog__single--meta">
-                            
+
                             <a href="##" class="title">	@lang('messages.impact_item_1_head')</a>
                             <div class="rts-blog__single--author">
                                 <p>@lang('messages.impact_item_1_para')</p>
@@ -191,7 +201,7 @@
                             <img class="blog__thumb" src="{{asset('assets/images/blog/2.jpg')}}" alt="blog post thumb">
                         </a>
                         <div class="rts-blog__single--meta">
-                            
+
                             <a href="##" class="title">	@lang('messages.impact_item_2_head')</a>
                             <div class="rts-blog__single--author">
                                 <p>@lang('messages.impact_item_2_para')</p>
@@ -208,7 +218,7 @@
                             <img class="blog__thumb" src="{{asset('assets/images/blog/3.jpg')}}" alt="blog post thumb">
                         </a>
                         <div class="rts-blog__single--meta">
-                            
+
                             <a href="##" class="title">	@lang('messages.impact_item_3_head')</a>
                             <div class="rts-blog__single--author">
                                 <p>@lang('messages.impact_item_3_para')</p>
@@ -221,8 +231,8 @@
                 </div>
             </div>
 		</div>
-    </section>	
-			
+    </section>
+
 			<!-- SEARCH DOMAIN -->
     <div id="Community" class=" rts-domain-finder section__padding">
         <div class="container">
@@ -242,7 +252,7 @@
         </div>
     </div>
     <!-- SEARCH DOMAIN END -->
-	
+
 	 <!-- HOSTING LATEST BLOG -->
     <section id="blog" class="rts-blog  section__padding">
         <div class="container">
@@ -263,9 +273,11 @@
 			<div class="newblog rts-brand__wrapper pt-5 pb-5">
 				 <div class="rts-testimonial__slider testimonial__slider--first">
                         <div class="swiper-wrapper">
-                        @if(!empty($recent))
-                        @foreach($recent as $row)    
-                            
+
+
+                       @if(!empty($recent))
+                        @foreach($recent as $row)
+
                             <div class="swiper-slide">
                                 <div class="rts-blog__single">
                                     <a href="{{route('user.blog_detail', ['id' =>$row->id,'cate_slug'=>$row->blog_slug])}}">
@@ -288,52 +300,8 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach                           
+                        @endforeach
                         @endif
-						<!-- <div class="swiper-slide">
-							<div class="rts-blog__single">
-								<a href="##">
-									<img class="blog__thumb" src="{{asset('assets/images/blog/post-2.jpg')}}" alt="blog post thumb">
-								</a>
-								<div class="rts-blog__single--meta">
-									<div class="cat__date float-start text-left">
-										<a href="#" class="cat">@lang('messages.blog_Subtext2')</a>
-									</div>
-									<a href="##" class="title  pb-3">@lang('messages.blog_Headline2')</a>
-									<hr>
-									<div class="row">
-										<div class="col-lg-6 col-6 author text-start">
-											<span><i class="fa fa-user"></i></span> By Natasha
-										</div>
-										<div class="col-lg-6 col-6  author__content text-end">
-											 <span><i class="fa fa-calendar"></i></span> <span>August 25, 2024</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="rts-blog__single">
-								<a href="##">
-									<img class="blog__thumb" src="{{asset('assets/images/blog/post-3.jpg')}}" alt="blog post thumb">
-								</a>
-								<div class="rts-blog__single--meta">
-									<div class="cat__date float-start text-left">
-										<a href="#" class="cat">@lang('messages.blog_Subtext3')</a>
-									</div>
-									<a href="##" class="title  pb-3">@lang('messages.blog_Headline3')</a>
-									<hr>
-									<div class="row">
-										<div class="col-lg-6 col-6 author text-start">
-											<span><i class="fa fa-user"></i></span> By William
-										</div>
-										<div class="col-lg-6 col-6  author__content text-end">
-											 <span><i class="fa fa-calendar"></i></span> <span>August 25, 2024</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div> -->
 					</div>
 					 <div class="rts-dot__button slider-center"></div>
 				</div>
@@ -341,12 +309,12 @@
 		</div>
     </section>
 
-    
+
     <!-- WHY CHOOSE US -->
-    <section class="rts-whychoose section__padding">
+    <section class="rts-whychoose pb-0 section__padding">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5 order-change">
+                <div class="col-lg-12 order-change">
                     <div class="rts-whychoose__content">
 						<div class="badgeview">
                             <div class="badge-bg-light ">@lang('messages.Testimonials')</div>
@@ -362,69 +330,44 @@
                             @if(!empty($testimonial))
                             @foreach($testimonial as $row)
                             <div class="swiper-slide">
-                                <div class="rts-testimonial__single">
-                                    <div class="content">
-                                        <p>{!! $row->description !!}</p>
-                                    </div>
-                                    <div class="author__meta">
-                                        <div class="author__meta--details">
-                                            <a href="#">{{$row->name}}</a>
-                                            <span>{{$row->job}}</span>
+                                <div class="testimoniyalview">
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="col-lg-6 rts-testimonial__single">
+                                            <div class="content">
+                                                <p style="color:#fff;">{!! $row->description !!}</p>
+                                            </div>
+                                            <div class="author__meta">
+                                                <div class="author__meta--details">
+                                                    <a href="#">{{$row->name}}</a>
+                                                    <span>{{$row->job}}</span>
+                                                </div>
+                                            </div>
+                                            <!-- pagination dot -->
+                                             <div class="pt-5 pb-5 rts-slider__btn hosting-slider">
+                                                <div class="slide__btn rts-prev"><i class="fa-light fa-chevron-left"></i></div>
+                                                <div class="slide__btn rts-next"><i class="fa-light fa-chevron-right"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="rts-whychoose__image">
+                                               <div class="image-container" id="container-inside">
+                                                   <div id="circle-xlarge"></div>
+                                                   <div id="circle-xxlarge"></div>
+                                                   <img src="{{ asset('uploads/testimonial/'.$row->image) }}" alt="">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach                           
+                            @endforeach
                         @endif
-                            <!-- single testimonial end -->
-                            <!-- single testimonial -->
-                            <!-- <div class="swiper-slide">
-                                <div class="rts-testimonial__single">
-                                    <div class="content">
-                                        <p>@lang('messages.Testimonials_Headline1')</p>
-                                    </div>
-                                    <div class="author__meta">
-                                        <div class="author__meta--details">
-                                            <a href="#">@lang('messages.Testimonials_Head')</a>
-                                            <span>@lang('messages.Testimonials_name')</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- single testimonial end -->
-                            <!-- single testimonial -->
-                            <!-- <div class="swiper-slide">
-                                <div class="rts-testimonial__single">
-                                    <div class="content">
-                                        <p>@lang('messages.Testimonials_Headline1')</p>
-                                    </div>
-                                    <div class="author__meta">
-                                        <div class="author__meta--details">
-                                            <a href="#">@lang('messages.Testimonials_Head')</a>
-                                            <span>@lang('messages.Testimonials_name')</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- single testimonial end -->
-                            
+
                         </div>
-                        <!-- pagination dot -->
-                         <div class="pt-5 rts-slider__btn hosting-slider">
-                            <div class="slide__btn rts-prev"><i class="fa-light fa-chevron-left"></i></div>
-                            <div class="slide__btn rts-next"><i class="fa-light fa-chevron-right"></i></div>
-                        </div>
+
                     </div>
                 </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <div class="rts-whychoose__image">
-                       <div class="image-container" id="container-inside">
-                           <div id="circle-xlarge"></div>
-                           <div id="circle-xxlarge"></div>
-                           <img src="{{asset('assets/images/team/testmoniyals.png')}}" alt="">
-                        </div> 
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="rts-shape">
@@ -433,6 +376,6 @@
     </section>
     <!-- WHY CHOOSE US END -->
 
-  
-    
+
+
 	@endsection

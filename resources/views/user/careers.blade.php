@@ -25,11 +25,11 @@
                 <div class="col-xl-6 col-lg-4 col-md-10">
                     <div class="contact-form">
 
-                                <img src="https://www.alhenzablaw.com/webassets/images/book/A7404203%20copy.jpg" alt="">
+                                <img src="{{asset('assets/images/about/resized_image.png')}}" alt="">
 
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-8 offset-xl-1 col-md-10">
+                <div class="col-xl-6 col-lg-8 col-md-10">
                     <div class="form">
                         <h5>@lang('messages.Careers_form_para')</h5>
                         <form class="form__content" method="post" id="careers-from">
@@ -50,10 +50,11 @@
 
                             </div>
                             <textarea name="message" id="message" cols="30" rows="10" placeholder="@lang('messages.career_coverletter_placeholder')" required></textarea>
-                            <input type="checkbox" name="checkbox" id="checkbox" value="1">
-                            <label for="checkbox">
-                            @lang('messages.career_appln_agreement_terms')
-                            </label>
+                            <div class="ab-rtl">
+                                <label><input type="checkbox" name="checkbox" id="checkbox" value="1">
+                                @lang('messages.career_appln_agreement_terms')</label>
+                            </div>
+
                             <p class="text-danger" id="checkbox_submit_error"></p>
                             <button type="submit" class="submit__btn" onclick="submitCareers();">@lang('messages.Submit_Now')</button>
                         </form>
