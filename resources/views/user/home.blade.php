@@ -101,7 +101,7 @@
                                 @foreach($brands as $row) 
                                     <div class="swiper-slide">
                                         <div class="rts-brand__slider--single">
-                                            <a href="#" aria-label="brand-link"><img width="153" height="148" src="{{ asset('uploads/brand/'.$row->image) }}" alt=""></a>
+                                            <a href="{{route('user.brand_detail' ,['id' =>$brand->id,'cate_slug'=>$brand->brand_slug])}}" aria-label="brand-link"><img width="153" height="148" src="{{ asset('uploads/brand/'.$row->image) }}" alt=""></a>
                                         </div>
                                     </div>
                                 @endforeach                           
