@@ -87,18 +87,37 @@
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facere architecto obcaecati quam temporibus aut sunt, perferendis mollitia nisi, vel hic nostrum? Numquam eos autem vel rem minima sint natus, voluptatem voluptatum quia nulla fugiat reprehenderit porro, harum fuga? Neque explicabo voluptatem expedita consectetur in, sunt nisi non id doloremque.</p> -->
                     </article>
-                    <!-- <div class="blog-info">
+                    <div class="blog-info">
                         <div class="blog-share">
                             <div class="share">Share:</div>
                             <div class="social__media--list">
-                                <a href="#" class="media"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="media"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="media"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="#" class="media"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#" class="media"><i class="fa-brands fa-behance"></i></a>
+                                <!-- Facebook -->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" target="_blank" class="media">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <!-- Instagram (Redirect to platform) -->
+                                <a href="https://www.instagram.com/?url={{ urlencode(request()->fullUrl()) }}" target="_blank" class="media">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <!-- LinkedIn -->
+                                <!-- <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlencode(request()->fullUrl()) }}" target="_blank" class="media">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a> -->
+                                <!-- Twitter -->
+                                <a href="https://twitter.com/share?url={{ urlencode(request()->fullUrl()) }}&text={{ urlencode($blog->title) }}" target="_blank" class="media">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="https://api.whatsapp.com/send?text={{ urlencode($blog->title) }} {{ urlencode(request()->fullUrl()) }}" target="_blank" class="media">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <!-- Behance (Redirect to platform) -->
+                                <!-- <a href="https://www.behance.net" target="_blank" class="media">
+                                    <i class="fa-brands fa-behance"></i>
+                                </a> -->
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+
                 </div>
                 <div class="col-lg-4">
                     <div class="rts-sidebar">
