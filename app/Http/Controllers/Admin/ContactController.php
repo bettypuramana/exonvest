@@ -9,6 +9,10 @@ use Auth;
 
 class ContactController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $contact=Contact::orderBy('id', 'DESC')->get();
         return view('admin.contact',compact('contact'));
@@ -17,10 +21,10 @@ class ContactController extends Controller
     {
         $contact=Contact::where('id',$id)->first();
         $del=Contact::where('id',$id)->delete();
- 
+
         if($del)
-        {  
-            return redirect(route('admin.contact'))->with('status','Deleted Successfully !');		
+        {
+            return redirect(route('admin.contact'))->with('status','Deleted Successfully !');
         }
         else
         {

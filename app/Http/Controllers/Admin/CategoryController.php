@@ -10,6 +10,10 @@ use Auth;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $category=Category::orderBy('id', 'DESC')->get();
         return view('admin.category',compact('category'));
@@ -35,7 +39,7 @@ class CategoryController extends Controller
             // 'description_en.required' => 'This field is required',
             // 'description_ar.required' => 'This field is required',
             ]
-            
+
         );
 
         $insertcategory= new Category;
@@ -67,15 +71,15 @@ class CategoryController extends Controller
     {
         $category=Category::where('id',$id)->first();
         $del=Category::where('id',$id)->delete();
-        
+
         // $imagePath = public_path('uploads/category/').$category->image;
-    
+
         // if (file_exists($imagePath)) {
         //     unlink($imagePath);
         // }
         if($del)
-        {  
-            return redirect(route('admin.category'))->with('status','Deleted Successfully !');		
+        {
+            return redirect(route('admin.category'))->with('status','Deleted Successfully !');
         }
         else
         {

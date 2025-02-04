@@ -61,7 +61,7 @@
                 </div>
                 <div class="sidebar_blog_2">
                     <ul class="list-unstyled components">
-                      
+
                         <li>
                             <a href="{{route('admin.dashboard')}}">
                             <i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
@@ -102,21 +102,28 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="#form_ptions" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-chevron-circle-down olivegreen_color"></i> <span>Form Options</span></a>
+                            <ul class="collapse list-unstyled" id="form_ptions">
+                            <li><a href="{{route('admin.experience_departments')}}">> <span>Experience Departments</span></a></li>
+                            <li><a href="{{route('admin.experience_years')}}">> <span>Experience Years</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="{{route('admin.contact')}}">
                             <i class="fa fa-paper-plane red_color"></i> <span>Contact</span></a>
-                        </li> 
+                        </li>
                         <li>
                             <a href="{{route('admin.career')}}">
                             <i class="fa fa-graduation-cap blue2_color"></i> <span>Careers</span></a>
-                        </li> 
+                        </li>
                         <li>
                             <a href="{{route('admin.news_letter')}}">
                             <i class="fa  fa-users orange_color"></i> <span>News Letter</span></a>
-                        </li> 
-                       
-                        
-                       
-                        
+                        </li>
+
+
+
+
                     </ul>
                 </div>
             </nav>

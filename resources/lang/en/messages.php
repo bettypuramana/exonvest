@@ -111,6 +111,7 @@ return [
 'all_categories'=>'All Categories',
 
 
-
+'experience_in'  => 'Experience in',
+'year_of_experience'  => 'Year of Experience',
 
 ];

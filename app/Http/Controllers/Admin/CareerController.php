@@ -9,6 +9,10 @@ use Auth;
 
 class CareerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $career=Career::orderBy('id', 'DESC')->get();
         return view('admin.career',compact('career'));
@@ -17,10 +21,10 @@ class CareerController extends Controller
     {
         $career=Career::where('id',$id)->first();
         $del=Career::where('id',$id)->delete();
- 
+
         if($del)
-        {  
-            return redirect(route('admin.career'))->with('status','Deleted Successfully !');		
+        {
+            return redirect(route('admin.career'))->with('status','Deleted Successfully !');
         }
         else
         {

@@ -98,13 +98,13 @@
                         <div class="rts-brand__slider">
                             <div class="swiper-wrapper">
                             @if(!empty($brands))
-                                @foreach($brands as $row) 
+                                @foreach($brands as $row)
                                     <div class="swiper-slide">
                                         <div class="rts-brand__slider--single">
-                                            <a href="{{route('user.brand_detail' ,['id' =>$brand->id,'cate_slug'=>$brand->brand_slug])}}" aria-label="brand-link"><img width="153" height="148" src="{{ asset('uploads/brand/'.$row->image) }}" alt=""></a>
+                                            <a href="{{route('user.brand_detail' ,['id' =>$row->id,'cate_slug'=>$row->brand_slug])}}" aria-label="brand-link"><img width="153" height="148" src="{{ asset('uploads/brand/'.$row->image) }}" alt=""></a>
                                         </div>
                                     </div>
-                                @endforeach                           
+                                @endforeach
                             @endif
                                 <!-- <div class="swiper-slide">
                                     <div class="rts-brand__slider--single">
@@ -131,7 +131,7 @@
                                         <a href="#" aria-label="brand-link"><img src="{{asset('assets/images/brand/5.jpg')}}" alt=""></a>
                                     </div>
                                 </div> -->
-                                
+
                             </div>
                         </div>
                     </div>

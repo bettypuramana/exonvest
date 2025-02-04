@@ -9,6 +9,10 @@ use Auth;
 
 class TagController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $tag=Tag::orderBy('id', 'DESC')->get();
         return view('admin.tag',compact('tag'));
@@ -28,7 +32,7 @@ class TagController extends Controller
             'category_en.required' => 'This field is required',
             'category_ar.required' => 'This field is required',
             ]
-            
+
         );
 
         $inserttag= new Tag;
@@ -50,8 +54,8 @@ class TagController extends Controller
         $del=Tag::where('id',$id)->delete();
 
         if($del)
-        {  
-            return redirect(route('admin.tag'))->with('status','Deleted Successfully !');		
+        {
+            return redirect(route('admin.tag'))->with('status','Deleted Successfully !');
         }
         else
         {
