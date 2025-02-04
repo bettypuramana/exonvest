@@ -9,9 +9,13 @@ use Auth;
 
 class TestimonialController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $testimonial=Testimonial::orderBy('id', 'DESC')->get();
-        
+
         return view('admin.testimonial',compact('testimonial'));
     }
     public function testimonial_add(){
@@ -43,7 +47,7 @@ class TestimonialController extends Controller
             'description_en.required' => 'This field is required',
             'description_ar.required' => 'This field is required',
             ]
-            
+
         );
 
         $inserttestimonial= new Testimonial;
@@ -78,7 +82,7 @@ class TestimonialController extends Controller
     }
     public function edit($id)
     {
-      
+
         $testimonial=Testimonial::where('id',$id)->first();
         return view('admin/testimonials_edit',compact('testimonial'));
     }
@@ -104,7 +108,7 @@ class TestimonialController extends Controller
             'description_en.required' => 'This field is required',
             'description_ar.required' => 'This field is required',
             ]
-            
+
         );
         $updatetestimonial= Testimonial::find($id);
         $updatetestimonial->title_en=$request->input('title_en');
@@ -126,13 +130,13 @@ class TestimonialController extends Controller
             $updatetestimonial->image=$filename;
         }
         $update= $updatetestimonial->save();
-      
-    
+
+
         if($update)
         {
           return redirect(route('admin.testimonial'))->with('status','Details Saved Successfully !');
         }
-  
+
        else
         {
           return redirect()->back()->with('Fail','Something Went Wrong');
@@ -142,15 +146,15 @@ class TestimonialController extends Controller
     {
         $testimonial=Testimonial::where('id',$id)->first();
         $del=Testimonial::where('id',$id)->delete();
-        
+
         $imagePath = public_path('uploads/testimonial/').$testimonial->image;
-    
+
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }
         if($del)
-        {  
-            return redirect(route('admin.testimonial'))->with('status','Deleted Successfully !');		
+        {
+            return redirect(route('admin.testimonial'))->with('status','Deleted Successfully !');
         }
         else
         {

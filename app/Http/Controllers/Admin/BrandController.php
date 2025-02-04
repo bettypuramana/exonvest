@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\DB;
 
 class BrandController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         // $brand=Brand::orderBy('id', 'DESC')->get();
         $brand = Brand::select(
@@ -64,7 +68,7 @@ class BrandController extends Controller
             'description_ar.required' => 'This field is required',
             'description_en.required' => 'This field is required',
             ]
-            
+
         );
 
         $category_ids = $request->input('category_id'); // This is an array
@@ -106,15 +110,15 @@ class BrandController extends Controller
     {
         $brand=Brand::where('id',$id)->first();
         $del=Brand::where('id',$id)->delete();
-        
+
         $imagePath = public_path('uploads/brand/').$brand->image;
-    
+
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }
         if($del)
-        {  
-            return redirect(route('admin.brand'))->with('status','Deleted Successfully !');		
+        {
+            return redirect(route('admin.brand'))->with('status','Deleted Successfully !');
         }
         else
         {
@@ -123,7 +127,7 @@ class BrandController extends Controller
     }
     public function edit($id)
     {
-      
+
         $brand=Brand::where('id',$id)->first();
         $categories=Category::orderBy('id', 'DESC')->get();
         return view('admin/brand_edit',compact('brand','categories'));
@@ -145,7 +149,7 @@ class BrandController extends Controller
             'description_en.required' => 'This field is required',
             ]
         );
-        
+
         $category_ids = $request->input('category_id'); // This is an array
         $category_ids_string = implode(',', $category_ids); // Convert to comma-separated string
 
@@ -171,13 +175,13 @@ class BrandController extends Controller
             $updatebrand->image=$filename;
         }
         $update= $updatebrand->save();
-      
-    
+
+
         if($update)
         {
           return redirect(route('admin.brand'))->with('status','Details Saved Successfully !');
         }
-  
+
        else
         {
           return redirect()->back()->with('Fail','Something Went Wrong');

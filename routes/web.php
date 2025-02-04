@@ -89,4 +89,21 @@ Route::get('/edit_testimonial/{id}', [App\Http\Controllers\Admin\TestimonialCont
 Route::post('/update_testimonial/{id}', [App\Http\Controllers\Admin\TestimonialController::class, 'update'])->name('update_testimonial');
 Route::get('/delete_testimonial/{id}', [App\Http\Controllers\Admin\TestimonialController::class, 'destroy'])->name('delete_testimonial');
 
-Auth::routes();
+
+/********* form-options */
+// experience-departments
+Route::get('/options/experience-departments', [App\Http\Controllers\Admin\FormoptionController::class, 'index'])->name('admin.experience_departments');
+Route::get('/options/experience-department-add', [App\Http\Controllers\Admin\FormoptionController::class, 'create'])->name('admin.experience_department_add');
+Route::post('/options/experience-department-store', [App\Http\Controllers\Admin\FormoptionController::class, 'store'])->name('admin.store_experience_department');
+Route::get('/options/experience-department-edit/{id}', [App\Http\Controllers\Admin\FormoptionController::class, 'edit'])->name('admin.edit_experience_department');
+Route::post('/options/experience-department-update/{id}', [App\Http\Controllers\Admin\FormoptionController::class, 'update'])->name('admin.update_experience_department');
+Route::get('/options/experience-department-delete/{id}', [App\Http\Controllers\Admin\FormoptionController::class, 'destroy'])->name('admin.delete_experience_department');
+// experience-years
+Route::get('/options/experience-years', [App\Http\Controllers\Admin\FormoptionController::class, 'years_index'])->name('admin.experience_years');
+Route::get('/options/experience-years-add', [App\Http\Controllers\Admin\FormoptionController::class, 'years_create'])->name('admin.experience_years_add');
+Route::post('/options/experience-years-store', [App\Http\Controllers\Admin\FormoptionController::class, 'years_store'])->name('admin.store_experience_years');
+Route::get('/options/experience-years-edit/{id}', [App\Http\Controllers\Admin\FormoptionController::class, 'years_edit'])->name('admin.edit_experience_years');
+Route::post('/options/experience-years-update/{id}', [App\Http\Controllers\Admin\FormoptionController::class, 'years_update'])->name('admin.update_experience_years');
+Route::get('/options/experience-years-delete/{id}', [App\Http\Controllers\Admin\FormoptionController::class, 'years_destroy'])->name('admin.delete_experience_years');
+
+Auth::routes(['register' => false]);

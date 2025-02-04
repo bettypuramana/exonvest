@@ -11,9 +11,13 @@ use Auth;
 
 class BlogController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $blog=Blog::orderBy('id', 'DESC')->get();
-        
+
         return view('admin.blog',compact('blog'));
     }
     public function blog_add(){
@@ -40,7 +44,7 @@ class BlogController extends Controller
             'description_ar.required' => 'This field is required',
             'date.required' => 'This field is required',
             ]
-            
+
         );
 
         $insertblog= new Blog;
@@ -77,7 +81,7 @@ class BlogController extends Controller
     }
     public function edit($id)
     {
-      
+
         $blog=Blog::where('id',$id)->first();
         $tags = Tag::all();
         return view('admin/blogs_edit',compact('blog','tags'));
@@ -100,7 +104,7 @@ class BlogController extends Controller
             'description_ar.required' => 'This field is required',
             'date.required' => 'This field is required',
             ]
-            
+
         );
         $updateblog= Blog::find($id);
         $updateblog->title_en=$request->input('title_en');
@@ -123,13 +127,13 @@ class BlogController extends Controller
             $updateblog->main_image=$filename;
         }
         $update= $updateblog->save();
-      
-    
+
+
         if($update)
         {
           return redirect(route('admin.blog'))->with('status','Details Saved Successfully !');
         }
-  
+
        else
         {
           return redirect()->back()->with('Fail','Something Went Wrong');
@@ -139,15 +143,15 @@ class BlogController extends Controller
     {
         $blog=Blog::where('id',$id)->first();
         $del=Blog::where('id',$id)->delete();
-        
+
         $imagePath = public_path('uploads/blog/').$blog->main_image;
-    
+
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }
         if($del)
-        {  
-            return redirect(route('admin.blog'))->with('status','Deleted Successfully !');		
+        {
+            return redirect(route('admin.blog'))->with('status','Deleted Successfully !');
         }
         else
         {

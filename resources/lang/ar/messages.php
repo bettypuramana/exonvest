@@ -109,5 +109,7 @@ return [
 'all_categories'=>'جميع الفئات',
 
 
+'experience_in'  => 'الخربة في المجاالت التالية',
+'year_of_experience'  => 'عدد سنوات الخربة',
 
 ];

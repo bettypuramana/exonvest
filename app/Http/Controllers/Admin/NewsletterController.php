@@ -10,8 +10,12 @@ use Auth;
 
 class NewsletterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
-      
+
         $newsL=Newsletter::orderBy('id', 'DESC')->get();
         return view('admin.newsletter',compact('newsL'));
     }
@@ -19,10 +23,10 @@ class NewsletterController extends Controller
     {
         $newsL=Newsletter::where('id',$id)->first();
         $del=Newsletter::where('id',$id)->delete();
- 
+
         if($del)
-        {  
-            return redirect(route('admin.news_letter'))->with('status','Deleted Successfully !');		
+        {
+            return redirect(route('admin.news_letter'))->with('status','Deleted Successfully !');
         }
         else
         {

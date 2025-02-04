@@ -4,7 +4,8 @@
         <div class="col-md-12">
             <div class="page_title">
                 <div class="d-flex justify-content-between">
-                    <h2>Career</h2>
+                    <h2>Experience Years</h2>
+                    <a href="{{route('admin.experience_years_add')}}" class="btn cur-p btn-warning">Add</a>
                 </div>
             </div>
 
@@ -32,14 +33,8 @@
                            <table class="table table-striped projects">
                               <thead class="thead-dark">
                                  <tr>
-                                    <th style="width: 2%">No</th>
-                                    <th style="width: 20%">Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Experience In</th>
-                                    <th>Year of Experience</th>
-                                    <th>CV</th>
-                                    <th>Cover Letter</th>
+                                    <th >No</th>
+                                    <th >Experience Departments</th>
                                     <th>Action</th>
                                  </tr>
                               </thead>
@@ -47,22 +42,15 @@
                                 @php
                                     $i=1;
                                     @endphp
-                                    @if(!empty($career))
-                                    @foreach($career as $row)
+                                    @if(!empty($experience_years))
+                                    @foreach($experience_years as $row)
                                  <tr>
                                     <td>{{$i}}</td>
-                                    <td>{{$row->name}}</td>
-                                    <td>{{$row->email}}</td>
-                                    <td>{{$row->phone}}</td>
-                                    <td>{{$row->experience_in}}</td>
-                                    <td>{{$row->year_of_experience}}</td>
-                                    <td>
-                                        <a href="{{ asset('uploads/cv/' . $row->cv) }}" target="_blank">
-                                            <i class="fa fa-file-pdf-o" style="font-size: 20px; color: red;"></i>
-                                        </a>
+                                    <td>{{$row->experience_en}}/{{$row->experience_ar}}</td>
+                                    <td class="project_progress">
+                                        <a href="{{ route('admin.edit_experience_years', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to edit this record?')" class="fa fa-edit text-warning"></a> &nbsp;&nbsp;&nbsp;
+                                        <a href="{{ route('admin.delete_experience_years', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a>
                                     </td>
-                                    <td>{{$row->coverletter}}</td>
-                                    <td class="project_progress"><a href="{{ route('delete_career', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="fa fa-trash-o text-danger"></a></td>
                                  </tr>
                                 @php
                                     $i++;

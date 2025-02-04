@@ -10,8 +10,10 @@ use App\Models\Contact;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\Experience_department;
 use App\Models\Testimonial;
 use App\Models\Tag;
+use App\Models\Year_of_experience;
 
 class HomeController extends Controller
 {
@@ -115,21 +117,37 @@ class HomeController extends Controller
                 ->orderBy('id', 'DESC')
                 ->get();
         }
-        
+
         return view('user.blog_detail',compact('blog','recent','tags'));
     }
     public function careers()
     {
-        return view('user.careers');
+        $locale = app()->getLocale();
+
+        if($locale=='ar'){
+            $departments=Experience_department::orderBy('id', 'ASC')->select('department_ar as department')->get();
+            $experience_years=Year_of_experience::orderBy('id', 'ASC')->select('experience_ar as experience_year')->get();
+        }else{
+            $departments=Experience_department::orderBy('id', 'ASC')->select('department_en as department')->get();
+            $experience_years=Year_of_experience::orderBy('id', 'ASC')->select('experience_en as experience_year')->get();
+        }
+        return view('user.careers',compact('departments','experience_years'));
     }
     public function submit_careers(Request $request)
     {
+
+    $experience_in=$request->input('experience_in');
+        if($experience_in=='Others (Write Below)'||$experience_in=='أخرى (اكتب أدناه)'){
+            $experience_in=$request->input('experience_in_other');
+        }
 
     $insert = new Career;
     $insert->name = $request->input('name');
     $insert->email = $request->input('email');
     $insert->phone = $request->input('phone');
-    $insert->position = $request->input('position');
+    $insert->position = 'Nill';
+    $insert->experience_in = $experience_in;
+    $insert->year_of_experience = $request->input('year_of_experience');
     $insert->coverletter = $request->input('message');
 
     if ($request->file('cv')!=null)
@@ -170,7 +188,7 @@ class HomeController extends Controller
             $brands = Brand::where('id', $id)
                 ->select('id', 'brand_ar as brand', 'description_ar as description', 'image','category_id')
                 ->first(); // Use first() to get a single record
-          
+
         } else {
             $brands = Brand::where('id', $id)
                 ->select('id', 'brand_en as brand', 'description_en as description', 'image','category_id')

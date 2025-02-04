@@ -42,11 +42,34 @@
                             </div>
                             <div class="form__control">
                                 <input type="number" class="input-form" name="phone" id="phone" placeholder="@lang('messages.career_phno_placeholder')" required>
-                               <input type="text" class="input-form" name="position" id="position" placeholder="@lang('messages.career_position_placeholder')" required>
-                            </div>
+                               {{-- <input type="text" class="input-form" name="position" id="position" placeholder="@lang('messages.career_position_placeholder')" required> --}}
+                               <select name="experience_in" id="experience_in" class="input-form" onchange="getOtherExperience();">
+                                <option value="">@lang('messages.experience_in')</option>
+                                @if (!empty($departments))
+                                    @foreach ($departments as $depart)
+                                    <option value="{{$depart->department}}">{{$depart->department}}</option>
+                                    @endforeach
+                                @endif
 
+                               </select>
+                            </div>
+                            <div class="form__control" style="display: none" id="experience_in_other_input">
+                                <input type="text" class="input-form" name="experience_in_other" id="experience_in_other" placeholder="@lang('messages.experience_in')" required>
+
+                            </div>
                             <div class="form__control">
+
                                 <input type="file" class="input-form" name="cv" id="cv" placeholder="" required>
+
+                                <select name="year_of_experience" id="year_of_experience" class="input-form">
+                                    <option value="">@lang('messages.year_of_experience')</option>
+                                    @if (!empty($experience_years))
+                                    @foreach ($experience_years as $experience_year)
+                                    <option value="{{$experience_year->experience_year}}">{{$experience_year->experience_year}}</option>
+                                    @endforeach
+                                @endif
+                                   </select>
+
 
                             </div>
                             <textarea name="message" id="message" cols="30" rows="10" placeholder="@lang('messages.career_coverletter_placeholder')" required></textarea>
@@ -73,26 +96,43 @@
         function submitCareers(){
 			event.preventDefault();
 
+
         var name=document.getElementById('name').value;
         var email=document.getElementById('email').value;
         var phone=document.getElementById('phone').value;
-        var position=document.getElementById('position').value;
-        var cv=document.getElementById('cv').value;
+        var experience_in=document.getElementById('experience_in').value;
+        var experience_in_other=document.getElementById('experience_in_other').value;
+        var year_of_experience=document.getElementById('year_of_experience').value;
+        var cv=document.getElementById('cv');
         var message=document.getElementById('message').value;
         var checkbox_submit=document.getElementById('checkbox');
+
+        var file = cv.files[0];
+
+
+
+
 			if(name==""){
 
             document.getElementById("input_error").innerHTML  = 'Please enter your name';
             }else if(email==""){
-                document.getElementById("input_error").innerHTML  = 'Please enter your Email';
+                document.getElementById("input_error").innerHTML  = 'Please enter your email';
             }else if(phone==""){
-                document.getElementById("input_error").innerHTML  = 'Please enter your Phone';
-            }else if(position==""){
-                document.getElementById("input_error").innerHTML  = 'Please enter your Position';
-            }else if(cv==""){
-                document.getElementById("input_error").innerHTML  = 'Please upload your CV';
+                document.getElementById("input_error").innerHTML  = 'Please enter your phone';
+            }else if(experience_in==""){
+                document.getElementById("input_error").innerHTML  = 'Please enter your experience in';
+            }else if((experience_in == 'Others (Write Below)' || experience_in == 'أخرى (اكتب أدناه)') && experience_in_other == "") {
+            document.getElementById("input_error").innerHTML  = 'Please enter write your experience in';
+            }else if(!file){
+                document.getElementById("input_error").innerHTML  = 'Please upload your cv';
+            }else if(file.type !== 'application/pdf'){
+                document.getElementById("input_error").innerHTML  = 'Only PDF files are allowed.';
+            }else if(file.size > 5 * 1024 * 1024){
+                document.getElementById("input_error").innerHTML  = 'File size must be less than 5MB.';
+            }else if(year_of_experience==""){
+                document.getElementById("input_error").innerHTML  = 'Please enter your year of experience';
             }else if(message==""){
-                document.getElementById("input_error").innerHTML  = 'Please enter Cover Letter';
+                document.getElementById("input_error").innerHTML  = 'Please enter cover letter';
             }else if(!checkbox_submit.checked){
                 document.getElementById("checkbox_submit_error").innerHTML  = 'You must agree to the terms and conditions.';
             }else{
@@ -125,5 +165,14 @@
 
 		}
 	}
+
+    function getOtherExperience(){
+        var experience_in=document.getElementById('experience_in').value;
+        if (experience_in == 'Others (Write Below)' || experience_in == 'أخرى (اكتب أدناه)') {
+            document.getElementById("experience_in_other_input").style.display = "block";
+        }else{
+            document.getElementById("experience_in_other_input").style.display = "none";
+        }
+    }
     </script>
     	@endsection
