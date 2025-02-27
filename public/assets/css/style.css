@@ -18052,7 +18052,7 @@ header.heder-two .sub-dropdown .submenu.third-lvl.base {
 }
 
 .rts-hero__one {
-  padding: 230px 0px 120px;
+  padding: 230px 0px 19 0px;
   background-color: #191b3e;
 }
 
@@ -32401,3 +32401,4 @@ header.heder-two .sub-dropdown .submenu.third-lvl.base {
   height: 50vh;
   padding-top: 10px;
 }
+
