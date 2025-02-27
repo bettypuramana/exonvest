@@ -85,6 +85,8 @@ class BrandController extends Controller
         $insertbrand->instagram=$request->input('instagram');
         $insertbrand->youtube=$request->input('youtube');
         $insertbrand->twitter=$request->input('twitter');
+        $insertbrand->main_website=$request->input('main_website');
+        $insertbrand->tiktok=$request->input('tiktok');
         $insertbrand->meta_title=$request->input('metatitle');
         $insertbrand->meta_description=$request->input('metadescription');
 
@@ -163,6 +165,8 @@ class BrandController extends Controller
         $updatebrand->instagram=$request->input('instagram');
         $updatebrand->youtube=$request->input('youtube');
         $updatebrand->twitter=$request->input('twitter');
+        $updatebrand->meta_title=$request->input('metatitle');
+        $updatebrand->tiktok=$request->input('tiktok');
         $updatebrand->meta_title=$request->input('metatitle');
         $updatebrand->meta_description=$request->input('metadescription');
         $updatebrand->image=$request->input('old');

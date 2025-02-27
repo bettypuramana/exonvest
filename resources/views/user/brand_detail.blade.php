@@ -46,9 +46,9 @@
                 <div class="col-lg-12">
                    <article class="blog-details">
     <div class="blog-details__featured-image">
-        <img 
-            src="{{ asset('uploads/brand/'.$brands->image) }}" 
-            alt="Foot Locker logo" 
+        <img
+            src="{{ asset('uploads/brand/'.$brands->image) }}"
+            alt="Foot Locker logo"
             class="img-fluid logo-small"
         />
 
@@ -88,12 +88,44 @@
     <p>
     {!!$brands->description!!}
     </p>
-   
+
 </article>
 
                     <div class="blog-info">
                         <div class="blog-share">
-                            <div class="share">Share:</div>
+                            <div class="social__media--list">
+                                @if (!empty($brands->facebook))
+                                <a href="{{$brands->facebook}}" target="_blank" class="media">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                @endif
+                                @if (!empty($brands->instagram))
+                                <a href="{{$brands->instagram}}" target="_blank" class="media">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                @endif
+                                @if (!empty($brands->youtube))
+                                <a href="{{$brands->youtube}}" target="_blank" class="media">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                                @endif
+                                @if (!empty($brands->twitter))
+                                <a href="{{$brands->twitter}}" target="_blank" class="media">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                @endif
+                                @if (!empty($brands->main_website))
+                                <a href="{{$brands->main_website}}" target="_blank" class="media">
+                                    <i class="fa-brands fa-internet-explorer"></i>
+                                </a>
+                                @endif
+                                 @if (!empty($brands->tiktok))
+                                <a href="{{$brands->tiktok}}" target="_blank" class="media">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </a>
+                                @endif
+                            </div>
+                            {{-- <div class="share">Share:</div>
                             <div class="social__media--list">
                                 <!-- Facebook -->
                                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" target="_blank" class="media">
@@ -118,11 +150,11 @@
                                 <!-- <a href="https://www.behance.net" target="_blank" class="media">
                                     <i class="fa-brands fa-behance"></i>
                                 </a> -->
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

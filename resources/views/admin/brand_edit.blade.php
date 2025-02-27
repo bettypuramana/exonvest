@@ -25,7 +25,7 @@
                                 <select class="form-control" name="category_id[]" id="category_id" multiple>
                                     <option value="" disabled>Select a category</option>
                                     @foreach($categories as $category)
-                                        <option value="{{ $category->id }}" 
+                                        <option value="{{ $category->id }}"
                                             {{ in_array($category->id, explode(',', $brand->category_id)) ? 'selected' : '' }}>
                                             {{ $category->category_en }}
                                         </option>
@@ -108,8 +108,25 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3">
+                                <label class="mb-2">Main Website</label>
+                                <input type="text" class="form-control" name="main_website" id="main_website" placeholder="Main Website" value="{{ old('main_website', $brand->main_website) }}"/>
+                                @error('main_website')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3">
+                                <label class="mb-2">TikTok</label>
+                                <input type="text" class="form-control" name="tiktok" id="tiktok" placeholder="TikTok" value="{{ old('tiktok', $brand->tiktok) }}"/>
+                                @error('tiktok')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
 
-                        
                         <div class="col-sm-6">
                             <div class="form-group mb-3">
                                 <label class="mb-2">Logo</label>
@@ -127,7 +144,7 @@
                             <div class="form-group mb-3">
                                 <label class="mb-2">Meta title</label>
                                 <input type="text" class="form-control" name="metatitle" id="metatitle" value="{{ old('meta_title', $brand->meta_title) }}"/>
-                                
+
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -136,7 +153,7 @@
                                 <input type="text" class="form-control" name="metadescription" id="metadescription" value="{{ old('meta_description', $brand->meta_description) }}" />
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="form-group mb-3">
                         <div>

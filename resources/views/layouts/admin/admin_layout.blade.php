@@ -222,7 +222,7 @@
     <script src="{{ asset('assets/admin/js/custom.js') }}"></script>
     <script src="{{ asset('assets/admin/js/chart_custom_style1.js') }}"></script>
 <!-- Place the first <script> tag in your HTML's <head> -->
-<script src="https://cdn.tiny.cloud/1/ru42f4xngm0pqpzrin2su5rvigedpc7tmq2d3htprtgyg163/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/1h1d8a76efrvsatdciuhxdl6iqtb2ruk9491orca22nqlj6k/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
 <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
 <script>

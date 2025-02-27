@@ -186,12 +186,12 @@ class HomeController extends Controller
 
         if ($locale == 'ar') {
             $brands = Brand::where('id', $id)
-                ->select('id', 'brand_ar as brand', 'description_ar as description', 'image','category_id')
+                ->select('id', 'brand_ar as brand', 'description_ar as description', 'image','category_id','facebook','instagram','youtube','twitter','main_website','tiktok')
                 ->first(); // Use first() to get a single record
 
         } else {
             $brands = Brand::where('id', $id)
-                ->select('id', 'brand_en as brand', 'description_en as description', 'image','category_id')
+                ->select('id', 'brand_en as brand', 'description_en as description', 'image','category_id','facebook','instagram','youtube','twitter','main_website','tiktok')
                 ->first(); // Use first() to get a single record
         }
         $categoryIds = explode(',', $brands->category_id);  // Split category_id into an array
