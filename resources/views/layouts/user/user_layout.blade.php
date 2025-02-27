@@ -76,8 +76,8 @@
                         $url= url()->current();
                         ?>
                         <ul class="list-inline d-flex  hours align-items-center mb-0">
-                            <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('english')}}@else{!! str_replace('arabic', 'english', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">English </a> </li> <span class="text-white"> / </span>
-                            <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('arabic')}}@else{!! str_replace('english', 'arabic', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Playfair Display';">عربي</a></li>
+                            <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('english')}}@else{!! str_replace('arabic', 'english', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Poppins';">English </a> </li> <span class="text-white"> / </span>
+                            <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('arabic')}}@else{!! str_replace('english', 'arabic', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Poppins';">عربي</a></li>
                         </ul>
 
                         <a href="##" class="login__btn" target="_blank">@lang('messages.Explore_Now')</a>
