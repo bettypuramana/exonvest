@@ -18074,7 +18074,7 @@ header.heder-two .sub-dropdown .submenu.third-lvl.base {
   height: 100%;
   width: 100%;
   content: "";
-  background-image: url(../images/banner/herobg.jpg);
+  background-image: url(../images/banner/herobg2.png);
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -28777,7 +28777,12 @@ header.heder-two .sub-dropdown .submenu.third-lvl.base {
   line-height: 1;
   color: var(--btc);
 }
-
+.rts-header__logo {
+    width: 20%;
+}
+.rts-header__logo img {
+    width: 75%;
+}
 .rts-feature-area .section-inner .inner-separator {
   position: relative;
   margin-top: 50px;

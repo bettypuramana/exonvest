@@ -189,9 +189,9 @@
                             <div class="rts-blog__single--author">
                                 <p>@lang('messages.impact_item_1_para')</p>
                             </div>
-							<div class=" text-center">
+							{{-- <div class=" text-center">
 								<a href="#about" class="primary__btn" target="_blank">@lang('messages.impact_btn')</a>
-							</div>
+							</div> --}}
                         </div>
                     </div>
                 </div>
@@ -206,9 +206,9 @@
                             <div class="rts-blog__single--author">
                                 <p>@lang('messages.impact_item_2_para')</p>
                             </div>
-							<div class=" text-center">
+							{{-- <div class=" text-center">
 								<a href="#about" class="primary__btn" target="_blank">@lang('messages.impact_btn')</a>
-							</div>
+							</div> --}}
                         </div>
                     </div>
                 </div>
@@ -223,9 +223,9 @@
                             <div class="rts-blog__single--author">
                                 <p>@lang('messages.impact_item_3_para')</p>
                             </div>
-							<div class=" text-center">
+							{{-- <div class=" text-center">
 								<a href="#about" class="primary__btn" target="_blank">@lang('messages.impact_btn')</a>
-							</div>
+							</div> --}}
                         </div>
                     </div>
                 </div>
@@ -311,7 +311,7 @@
 
 
     <!-- WHY CHOOSE US -->
-    <section class="rts-whychoose pb-0 section__padding">
+    {{-- <section class="rts-whychoose pb-0 section__padding">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12 order-change">
@@ -373,7 +373,7 @@
         <div class="rts-shape">
             <div class="rts-shape__one"></div>
         </div>
-    </section>
+    </section> --}}
     <!-- WHY CHOOSE US END -->
 
 
