@@ -23,7 +23,7 @@
                 <div class="col-lg-12 col-md-6 col-sm-10">
                     <div class="rts-blog__single">
                         <h3>@lang('messages.welcome_to_community')</h3>
-                        <img class="blog__thumb" src="{{ asset('assets/images/about/Community_image.png') }}"
+                        <img class="blog__thumb" src="{{ asset('assets/images/about/Community_photo.png') }}"
                             alt="blog post thumb">
 
                         <div class="rts-blogs pt-3 pb-3">

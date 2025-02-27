@@ -107,8 +107,25 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3">
+                                <label class="mb-2">Main Website</label>
+                                <input type="text" class="form-control" name="main_website" id="main_website" placeholder="Main Website" value="{{old('main_website')}}"/>
+                                @error('main_website')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-3">
+                                <label class="mb-2">TikTok</label>
+                                <input type="text" class="form-control" name="tiktok" id="tiktok" placeholder="TikTok" value="{{old('tiktok')}}"/>
+                                @error('tiktok')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
 
-                        
                         <div class="col-sm-6">
                             <div class="form-group mb-3">
                                 <label class="mb-2">Logo</label>
@@ -122,7 +139,7 @@
                             <div class="form-group mb-3">
                                 <label class="mb-2">Meta title</label>
                                 <input type="text" class="form-control" name="metatitle" id="metatitle" />
-                                
+
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -131,7 +148,7 @@
                                 <input type="text" class="form-control" name="metadescription" id="metadescription" />
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="form-group mb-3">
                         <div>

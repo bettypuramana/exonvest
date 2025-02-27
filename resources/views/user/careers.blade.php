@@ -25,7 +25,7 @@
                 <div class="col-xl-6 col-lg-4 col-md-10">
                     <div class="contact-form">
 
-                                <img src="{{asset('assets/images/about/resized_image.png')}}" alt="">
+                                <img src="{{asset('assets/images/about/careers_page_photo.png')}}" alt="">
 
                     </div>
                 </div>

@@ -106,4 +106,4 @@ Route::get('/options/experience-years-edit/{id}', [App\Http\Controllers\Admin\Fo
 Route::post('/options/experience-years-update/{id}', [App\Http\Controllers\Admin\FormoptionController::class, 'years_update'])->name('admin.update_experience_years');
 Route::get('/options/experience-years-delete/{id}', [App\Http\Controllers\Admin\FormoptionController::class, 'years_destroy'])->name('admin.delete_experience_years');
 
-Auth::routes(['register' => false]);
+Auth::routes();

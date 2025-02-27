@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="description" content="Partnering with responsible brands to create a future of integrity, trust, and impact.">
     <meta name="keywords" content="Empowering Ethical Choices, Building a Better World">
-    <link rel="icon" href="{{asset('assets/images/favicon.webp')}}">
+    <link rel="icon" href="{{asset('assets/images/favicon_48.png')}}">
     <link rel="canonical" href="#">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="robots" content="index, follow">
