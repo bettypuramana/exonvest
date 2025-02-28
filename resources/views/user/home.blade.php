@@ -212,7 +212,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="rts-blog__single">
                         <a href="##">
