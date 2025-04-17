@@ -6,6 +6,7 @@ return [
 
 'home' => 'Home',
 'contact' => 'Contact us',
+'contact2' => 'Contact us',
 'about_us'  => 'About us',
 'brands'  => 'Brands',
 'Community'  => 'Community',
@@ -16,8 +17,8 @@ return [
 'Quick_Links'=>'Quick Links',
 'Contact_Information'=>'Contact Information',
 'address'=>'11th Floor, Al Reem Tower, Westbay, Doha',
-'menu'=>'Menu',
-'subcription'=>'Exonvest - Exelling On Investments',
+'menu'=>'Sections',
+'subcription'=>'Exonvest - Excelling On Investments',
 'subcription_p'=>'Supporting Ethical Partners, Building a Better World',
 'copyright'=>'Copyright Exonvest 2024. All Rights Reserved.',
 'slider_head'=>'Empowering Ethical Choices, Building a Better World',
