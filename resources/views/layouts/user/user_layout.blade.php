@@ -61,7 +61,7 @@
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/':request()->segment(1).'/')}}">@lang('messages.home')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'about':request()->segment(1).'/'.'about')}}">@lang('messages.about_us')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'brands':request()->segment(1).'/'.'brands')}}">@lang('messages.brands')</a></li>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li>
+                                <!-- <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li> -->
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'careers':request()->segment(1).'/'.'careers')}}">@lang('messages.Careers')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'blog':request()->segment(1).'/'.'blog')}}">@lang('messages.Blog')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'contact_us':request()->segment(1).'/'.'contact_us')}}">@lang('messages.contact')</a></li>
@@ -177,6 +177,7 @@
 						   <a href="https://x.com/exonvest" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-x-twitter"></i></a>
 
 						   <a href="https://www.youtube.com/channel/UCmguIwVbySkY92UZroDXySw" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-youtube"></i></a>
+                           <a href="https://www.tiktok.com/@exonvest" aria-label="social-link" target="_blank" class="media"><i class="fa-brands fa-tiktok"></i></a>
 						</div>
                     </div>
                 </div>
