@@ -47,9 +47,9 @@
                     <!-- FOR LOGO -->
                     <div class="rts-header__logo">
                         <a href="{{url(empty(app()->getLocale())?'english'.'/':request()->segment(1).'/')}}" class="site-logo">
-                            <!---<img class="logo-white" src="assets/images/logo/logo-1.svg" alt="Hostie">
-                            <img class="logo-dark" src="assets/images/logo/logo-4.svg" alt="Hostie">-->
-							<h3 class="logoname">@lang('messages.exonvest')</h3>
+                            <img class="logo-white" src="{{asset('assets/images/logo/EXONWEST white.png')}}" alt="Hostie">
+                            <img class="logo-dark" src="{{asset('assets/images/logo/EXONWEST BLUE.png')}}" alt="Hostie">
+							{{-- <h3 class="logoname">@lang('messages.exonvest')</h3> --}}
 
                         </a>
                     </div>
@@ -61,7 +61,7 @@
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/':request()->segment(1).'/')}}">@lang('messages.home')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'about':request()->segment(1).'/'.'about')}}">@lang('messages.about_us')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'brands':request()->segment(1).'/'.'brands')}}">@lang('messages.brands')</a></li>
-                                <!-- <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li> -->
+                                {{-- <!-- <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li> --}} -->
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'careers':request()->segment(1).'/'.'careers')}}">@lang('messages.Careers')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'blog':request()->segment(1).'/'.'blog')}}">@lang('messages.Blog')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'contact_us':request()->segment(1).'/'.'contact_us')}}">@lang('messages.contact')</a></li>
@@ -75,12 +75,12 @@
                         <?php
                         $url= url()->current();
                         ?>
-                        <ul class="list-inline d-flex  hours align-items-center mb-0">
+                        <ul class="list-inline d-flex  hours align-items-center">
                             <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('english')}}@else{!! str_replace('arabic', 'english', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Poppins';">English </a> </li> <span class="text-white"> / </span>
                             <li class="list-inline-item lang mr-5"><a href="@if(empty(app()->getLocale())){{url('arabic')}}@else{!! str_replace('english', 'arabic', $url) !!}@endif" class="fs-15 lh-1" style="font-family: 'Poppins';">عربي</a></li>
                         </ul>
 
-                        <a href="##" class="login__btn" target="_blank">@lang('messages.Explore_Now')</a>
+                        {{-- <a href="##" class="login__btn" target="_blank">@lang('messages.Explore_Now')</a> --}}
 
                         <button id="menu-btn" aria-label="Menu" class="mobile__active menu-btn"><i class="fa-sharp fa-solid fa-bars"></i></button>
                     </div>
@@ -128,7 +128,7 @@
                                  <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/':app()->getLocale().'/')}}">@lang('messages.home')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'en'.'/'.'about':app()->getLocale().'/'.'about')}}">@lang('messages.about_us')</a></li>
                                 <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'brands':request()->segment(1).'/'.'brands')}}">@lang('messages.brands')</a></li>
-                                <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li>
+                                {{-- <li class="menu-item"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li> --}}
                             </ul>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                     <li class="main"><a href="{{url(empty(app()->getLocale())? '/':request()->segment(1).'/')}}">@lang('messages.home')</a></li>
                                 <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'about':request()->segment(1).'/'.'about')}}">@lang('messages.about_us')</a></li>
                                 <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'brands':request()->segment(1).'/'.'brands')}}">@lang('messages.brands')</a></li>
-                                <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li>
+                                {{-- <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'community':request()->segment(1).'/'.'community')}}">@lang('messages.Community')</a></li> --}}
                                 <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'careers':request()->segment(1).'/'.'careers')}}">@lang('messages.Careers')</a></li>
                                 <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'blog':request()->segment(1).'/'.'blog')}}">@lang('messages.Blog')</a></li>
                                 <li class="main"><a href="{{url(empty(app()->getLocale())?'english'.'/'.'contact_us':request()->segment(1).'/'.'contact_us')}}">@lang('messages.contact')</a></li>

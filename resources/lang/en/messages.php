@@ -6,6 +6,7 @@ return [
 
 'home' => 'Home',
 'contact' => 'Contact us',
+'contact2' => 'Contact us',
 'about_us'  => 'About us',
 'brands'  => 'Brands',
 'Community'  => 'Community',
